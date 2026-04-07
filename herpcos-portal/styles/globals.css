@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pcos-pink: #f9a8d4;
+  --color-pcos-purple: #a78bfa;
+  --color-pcos-lavender: #ede9fe;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
