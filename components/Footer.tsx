@@ -16,7 +16,7 @@ export default function Footer() {
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
               AI-powered PCOS support with a chatbot, community Q&amp;A, and
-              hormone health guidance — designed with care for every woman's
+              hormone health guidance — designed with care for every woman&apos;s
               journey.
             </p>
           </div>
