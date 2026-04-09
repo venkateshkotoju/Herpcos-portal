@@ -109,8 +109,8 @@ export default function ChatPage() {
                 <div
                   className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
                     message.role === "user"
-                      ? "bg-pink-600 text-white rounded-br-sm"
-                      : "bg-gray-100 text-gray-900 rounded-bl-sm"
+                      ? "bg-indigo-600 text-white rounded-br-sm"
+                      : "bg-gray-100 text-black rounded-bl-sm"
                   }`}
                 >
                   {message.content}
@@ -132,7 +132,7 @@ export default function ChatPage() {
           </div>
 
           {/* Input Area */}
-          <div className="border-t border-gray-100 p-4">
+          <div className="border-t border-gray-100 bg-white p-4">
             <div className="flex items-end gap-3">
               <textarea
                 value={input}
@@ -140,7 +140,7 @@ export default function ChatPage() {
                 onKeyDown={handleKeyDown}
                 rows={2}
                 placeholder="Ask about PCOS symptoms, treatments, diet..."
-                className="flex-1 resize-none rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-300 focus:border-transparent"
+                className="flex-1 resize-none rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-black placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-pink-300 focus:border-transparent"
               />
               <button
                 onClick={handleSend}
