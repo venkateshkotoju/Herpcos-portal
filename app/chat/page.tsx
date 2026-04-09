@@ -141,6 +141,7 @@ export default function ChatPage() {
                 rows={2}
                 placeholder="Ask about PCOS symptoms, treatments, diet..."
                 className="flex-1 resize-none rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-black placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-pink-300 focus:border-transparent"
+                style={{ color: "#000000", backgroundColor: "#ffffff" }}
               />
               <button
                 onClick={handleSend}
