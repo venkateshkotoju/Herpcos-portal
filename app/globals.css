@@ -3,14 +3,20 @@
 @tailwind utilities;
 
 body {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #ffffff !important;
+  color: #000000 !important;
 }
 
 input,
 textarea {
-  color: #000000;
-  background-color: #ffffff;
+  color: #000000 !important;
+  background-color: #ffffff !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #6b7280 !important;
+  opacity: 1 !important;
 }
 
 @layer utilities {
