@@ -110,7 +110,7 @@ export default function ChatPage() {
                   className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
                     message.role === "user"
                       ? "bg-pink-600 text-white rounded-br-sm"
-                      : "bg-gray-100 text-gray-800 rounded-bl-sm"
+                      : "bg-gray-100 text-gray-900 rounded-bl-sm"
                   }`}
                 >
                   {message.content}
@@ -140,7 +140,7 @@ export default function ChatPage() {
                 onKeyDown={handleKeyDown}
                 rows={2}
                 placeholder="Ask about PCOS symptoms, treatments, diet..."
-                className="flex-1 resize-none rounded-xl border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-pink-300 focus:border-transparent"
+                className="flex-1 resize-none rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-300 focus:border-transparent"
               />
               <button
                 onClick={handleSend}
