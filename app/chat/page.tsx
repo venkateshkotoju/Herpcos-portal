@@ -10,14 +10,6 @@ interface Message {
   timestamp: Date;
 }
 
-const SAMPLE_RESPONSES: string[] = [
-  "PCOS (Polycystic Ovary Syndrome) is a hormonal disorder common among women of reproductive age. It involves irregular periods, excess androgen levels, and/or polycystic ovaries. Management typically includes lifestyle changes, medication, and monitoring.",
-  "Insulin resistance is closely linked to PCOS. Maintaining a balanced diet low in refined sugars, exercising regularly, and in some cases taking medications like metformin can help manage insulin sensitivity.",
-  "Common PCOS symptoms include irregular periods, heavy bleeding, excess facial or body hair (hirsutism), acne, weight gain, and difficulty getting pregnant. Symptoms vary widely between individuals.",
-  "A PCOS-friendly diet often focuses on low glycemic index (GI) foods, adequate fiber, lean proteins, and healthy fats. Foods like vegetables, whole grains, legumes, and fatty fish can be beneficial.",
-  "Exercise is beneficial for PCOS management. Both aerobic exercise and strength training can help improve insulin sensitivity, reduce androgen levels, and support a healthy weight.",
-];
-
 export default function ChatPage() {
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -50,19 +42,42 @@ export default function ChatPage() {
     setInput("");
     setIsTyping(true);
 
-    // Simulate AI response
-    setTimeout(() => {
-      const response =
-        SAMPLE_RESPONSES[Math.floor(Math.random() * SAMPLE_RESPONSES.length)];
+    try {
+      const updatedMessages = [
+        ...messages,
+        userMessage,
+      ].map(({ role, content }) => ({ role, content }));
+
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: updatedMessages }),
+      });
+
+      const data = await res.json();
+
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
         role: "assistant",
-        content: response,
+        content: res.ok
+          ? data.reply
+          : (data.error ?? "Sorry, something went wrong. Please try again."),
         timestamp: new Date(),
       };
       setMessages((prev) => [...prev, assistantMessage]);
+    } catch {
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: (Date.now() + 1).toString(),
+          role: "assistant",
+          content: "Unable to reach the server. Please check your connection and try again.",
+          timestamp: new Date(),
+        },
+      ]);
+    } finally {
       setIsTyping(false);
-    }, 1500);
+    }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -104,7 +119,26 @@ export default function ChatPage() {
                       : "bg-gray-100 text-gray-800 rounded-bl-sm"
                   }`}
                 >
-                  {message.content}
+                  {message.role === "assistant"
+                    ? message.content.split("\n").map((line, i) => {
+                        const isHeader =
+                          line.startsWith("What's happening:") ||
+                          line.startsWith("What you can do:") ||
+                          line.startsWith("Quick tips:");
+                        return (
+                          <span key={i}>
+                            {isHeader ? (
+                              <strong>{line}</strong>
+                            ) : (
+                              line
+                            )}
+                            {i < message.content.split("\n").length - 1 && (
+                              <br />
+                            )}
+                          </span>
+                        );
+                      })
+                    : message.content}
                 </div>
               </div>
             ))}
