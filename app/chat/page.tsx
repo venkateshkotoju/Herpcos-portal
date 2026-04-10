@@ -10,146 +10,8 @@ interface Message {
   timestamp: Date;
 }
 
-// System prompt defining the PCOS assistant's behavior and response format
-const SYSTEM_PROMPT = `You are a PCOS-focused women's health assistant.
-
-Your goals:
-- Explain things simply (beginner-friendly)
-- Be empathetic and supportive
-- Keep responses under 150–200 words
-
-Response format (always use this structure):
-**[Topic Title]**
-
-**What's happening**
-One or two plain-English sentences explaining the concept.
-
-**What you can do**
-- Bullet 1
-- Bullet 2
-- Bullet 3
-
-**Quick tips**
-- Bullet 1
-- Bullet 2
-
-*This is for educational purposes only. Please consult a healthcare professional.*
-
-Avoid medical diagnosis and fear-based language.`;
-
-const SAMPLE_RESPONSES: string[] = [
-  `**What is PCOS?**
-
-**What's happening**
-PCOS is a hormonal condition where the ovaries produce excess androgens, often disrupting your cycle, metabolism, and skin. It's common and very manageable.
-
-**What you can do**
-- Track your cycle with an app (Clue or Flo) to spot patterns
-- Keep a short symptom log to share with your doctor
-- Focus on one small change at a time — consistency beats perfection
-
-**Quick tips**
-- Cut back on processed sugar and refined carbs
-- Aim for 7–9 hours of sleep — poor sleep disrupts hormones
-
-*This is for educational purposes only. Please consult a healthcare professional.*`,
-
-  `**Insulin Resistance & PCOS**
-
-**What's happening**
-With insulin resistance, your cells don't respond well to insulin, so blood sugar stays high. This is linked to PCOS and can make symptoms worse — but lifestyle changes help a lot.
-
-**What you can do**
-- Pair every meal with protein + fiber + healthy fat
-- Take a 10-minute walk after meals to lower blood sugar
-- Avoid skipping meals, especially breakfast
-
-**Quick tips**
-- Swap white bread/rice for oats, quinoa, or brown rice
-- Replace sugary drinks with water, herbal tea, or sparkling water
-
-*This is for educational purposes only. Please consult a healthcare professional.*`,
-
-  `**PCOS Symptoms Checklist**
-
-**What's happening**
-PCOS symptoms vary widely — you may have just a few or several. Recognizing them helps you track progress and have better conversations with your doctor.
-
-**What you can do**
-- Note which symptoms you experience: irregular periods, acne, hair thinning, weight changes, low energy, unwanted hair growth
-- Rate each symptom weekly (1–5) to spot trends
-- Bring your log to your next appointment
-
-**Quick tips**
-- Anti-inflammatory foods (berries, leafy greens, fatty fish) can ease acne and bloating
-- Stress reduction through journaling or meditation supports hormone balance
-
-*This is for educational purposes only. Please consult a healthcare professional.*`,
-
-  `**Best Diet for PCOS**
-
-**What's happening**
-Food directly affects your hormones and insulin levels. A PCOS-friendly diet focuses on stable blood sugar — not restriction.
-
-**What you can do**
-- Build your plate: ½ vegetables, ¼ lean protein, ¼ complex carbs
-- Eat every 3–4 hours to avoid blood sugar spikes
-- Stay hydrated — aim for 6–8 glasses of water daily
-
-**Quick tips**
-- Eat more: leafy greens, eggs, salmon, lentils, berries, nuts
-- Limit: white bread, sugary cereals, fried foods, fizzy drinks
-
-*This is for educational purposes only. Please consult a healthcare professional.*`,
-
-  `**Exercise & PCOS**
-
-**What's happening**
-Movement naturally lowers insulin, reduces androgens, and improves mood. You don't need intense workouts — consistency is what matters most.
-
-**What you can do**
-- Aim for 30 minutes of activity most days (walking counts!)
-- Add strength training 2–3x per week to build insulin-sensitive muscle
-- Start small — even 10-minute sessions add up
-
-**Quick tips**
-- Cardio: walking, cycling, swimming, or dancing
-- Recovery: yoga or stretching helps balance cortisol levels
-
-*This is for educational purposes only. Please consult a healthcare professional.*`,
-
-  `**How to Regulate Periods Naturally**
-
-**What's happening**
-Irregular periods with PCOS are caused by hormonal imbalance — mainly elevated androgens and insulin disrupting ovulation. Lifestyle changes can help restore rhythm.
-
-**What you can do**
-- Reduce refined sugar and carbs to lower insulin spikes
-- Exercise regularly — even 20–30 min of walking most days helps
-- Manage stress: high cortisol disrupts your cycle further
-
-**Quick tips**
-- Spearmint tea (1–2 cups daily) may help lower androgen levels
-- Consistent sleep and wake times support hormonal rhythm
-
-*This is for educational purposes only. Please consult a healthcare professional.*`,
-
-  `**Managing Stress with PCOS**
-
-**What's happening**
-Stress raises cortisol, which throws other hormones further out of balance and can worsen PCOS symptoms like irregular periods and weight gain.
-
-**What you can do**
-- Try 5 minutes of deep breathing or a short walk when overwhelmed
-- Protect your sleep — aim for a consistent bedtime
-- Connect with a PCOS support community for shared experience
-
-**Quick tips**
-- Magnesium-rich foods (spinach, almonds, dark chocolate) ease stress response
-- Limit caffeine after noon to protect sleep quality
-
-*This is for educational purposes only. Please consult a healthcare professional.*`,
-];
+const FALLBACK_ERROR =
+  "**Something went wrong**\n\n**What's happening**\nI wasn't able to get a response right now. This may be a connection issue or a configuration problem.\n\n**What you can do**\n- Check your internet connection and try again\n- Refresh the page if the problem persists\n- Contact support if this keeps happening\n\n*This is for educational purposes only. Please consult a healthcare professional.*";
 
 /** Renders a subset of markdown: **bold**, *italic*, and - bullet lines */
 function renderMarkdown(text: string) {
@@ -201,7 +63,7 @@ export default function ChatPage() {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  const sendMessage = (text: string) => {
+  const sendMessage = async (text: string) => {
     if (!text.trim() || isTyping) return;
 
     const userMessage: Message = {
@@ -211,23 +73,60 @@ export default function ChatPage() {
       timestamp: new Date(),
     };
 
-    setMessages((prev) => [...prev, userMessage]);
+    // Build the updated history including the new user message
+    const updatedMessages = [...messages, userMessage];
+
+    setMessages(updatedMessages);
     setInput("");
     setIsTyping(true);
 
-    // Simulate AI response
-    setTimeout(() => {
-      const response =
-        SAMPLE_RESPONSES[Math.floor(Math.random() * SAMPLE_RESPONSES.length)];
-      const assistantMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        role: "assistant",
-        content: response,
-        timestamp: new Date(),
-      };
-      setMessages((prev) => [...prev, assistantMessage]);
+    // Placeholder for the streaming assistant reply
+    const assistantId = (Date.now() + 1).toString();
+    setMessages((prev) => [
+      ...prev,
+      { id: assistantId, role: "assistant", content: "", timestamp: new Date() },
+    ]);
+
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          messages: updatedMessages.map((m) => ({
+            role: m.role,
+            content: m.content,
+          })),
+        }),
+      });
+
+      if (!res.ok || !res.body) {
+        throw new Error(`API error: ${res.status}`);
+      }
+
+      // Stream text chunks into the assistant message
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        const chunk = decoder.decode(value, { stream: true });
+        setMessages((prev) =>
+          prev.map((m) =>
+            m.id === assistantId ? { ...m, content: m.content + chunk } : m
+          )
+        );
+      }
+    } catch (err) {
+      console.error("[chat] fetch error:", err);
+      setMessages((prev) =>
+        prev.map((m) =>
+          m.id === assistantId ? { ...m, content: FALLBACK_ERROR } : m
+        )
+      );
+    } finally {
       setIsTyping(false);
-    }, 1500);
+    }
   };
 
   const handleSend = () => sendMessage(input);
@@ -277,22 +176,18 @@ export default function ChatPage() {
                   }`}
                 >
                   {message.role === "assistant"
-                    ? renderMarkdown(message.content)
+                    ? message.content
+                      ? renderMarkdown(message.content)
+                      : // Empty placeholder while first chunk hasn't arrived yet
+                        <span className="flex gap-1 items-center h-4">
+                          <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce [animation-delay:-0.3s]"></span>
+                          <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce [animation-delay:-0.15s]"></span>
+                          <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></span>
+                        </span>
                     : message.content}
                 </div>
               </div>
             ))}
-            {isTyping && (
-              <div className="flex justify-start">
-                <div className="bg-gray-100 text-gray-500 rounded-2xl rounded-bl-sm px-4 py-3 text-sm">
-                  <span className="flex gap-1 items-center">
-                    <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce [animation-delay:-0.3s]"></span>
-                    <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce [animation-delay:-0.15s]"></span>
-                    <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></span>
-                  </span>
-                </div>
-              </div>
-            )}
             <div ref={messagesEndRef} />
           </div>
 
