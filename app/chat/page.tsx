@@ -186,13 +186,13 @@ export default function ChatPage() {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  const handleSend = async () => {
-    if (!input.trim()) return;
+  const sendMessage = (text: string) => {
+    if (!text.trim() || isTyping) return;
 
     const userMessage: Message = {
       id: Date.now().toString(),
       role: "user",
-      content: input.trim(),
+      content: text.trim(),
       timestamp: new Date(),
     };
 
@@ -213,6 +213,13 @@ export default function ChatPage() {
       setMessages((prev) => [...prev, assistantMessage]);
       setIsTyping(false);
     }, 1500);
+  };
+
+  const handleSend = () => sendMessage(input);
+
+  const handleQuickSend = (question: string) => {
+    setInput(question);
+    sendMessage(question);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -276,6 +283,24 @@ export default function ChatPage() {
 
           {/* Input Area */}
           <div className="border-t border-gray-100 p-4">
+            {/* Quick Questions */}
+            <div className="flex flex-wrap gap-2 mb-3">
+              {[
+                "Best diet for PCOS?",
+                "How to lose weight with PCOS?",
+                "How to regulate periods naturally?",
+                "PCOS symptoms checklist",
+              ].map((q) => (
+                <button
+                  key={q}
+                  onClick={() => handleQuickSend(q)}
+                  disabled={isTyping}
+                  className="text-xs bg-pink-50 border border-pink-200 text-pink-700 px-3 py-1.5 rounded-full hover:bg-pink-100 hover:border-pink-300 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                >
+                  {q}
+                </button>
+              ))}
+            </div>
             <div className="flex items-end gap-3">
               <textarea
                 value={input}
