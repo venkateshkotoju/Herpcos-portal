@@ -15,123 +15,138 @@ const SYSTEM_PROMPT = `You are a PCOS-focused women's health assistant.
 
 Your goals:
 - Explain things simply (beginner-friendly)
-- Give actionable steps (diet, lifestyle, exercise)
 - Be empathetic and supportive
-- Use bullet points when helpful
+- Keep responses under 150–200 words
 
-For every answer include:
-1. Short explanation
-2. Actionable steps (what to do)
-3. Optional tips (diet, exercise, habits)
+Response format (always use this structure):
+**[Topic Title]**
 
-Avoid:
-- Medical diagnosis
-- Fear-based language
+**What's happening**
+One or two plain-English sentences explaining the concept.
 
-End every response with:
-"This is for educational purposes only. Please consult a healthcare professional."`;
+**What you can do**
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+**Quick tips**
+- Bullet 1
+- Bullet 2
+
+*This is for educational purposes only. Please consult a healthcare professional.*
+
+Avoid medical diagnosis and fear-based language.`;
 
 const SAMPLE_RESPONSES: string[] = [
   `**What is PCOS?**
 
-PCOS (Polycystic Ovary Syndrome) is a hormonal condition that affects how your ovaries work. It's very common — and importantly, it's manageable with the right support.
+**What's happening**
+PCOS is a hormonal condition where the ovaries produce excess androgens, often disrupting your cycle, metabolism, and skin. It's common and very manageable.
 
-**What you can do:**
-- Track your menstrual cycle using an app (e.g. Clue, Flo) to spot patterns
-- Keep a symptom journal to share with your doctor
-- Start with small lifestyle changes — even 5% weight loss can improve symptoms
+**What you can do**
+- Track your cycle with an app (Clue or Flo) to spot patterns
+- Keep a short symptom log to share with your doctor
+- Focus on one small change at a time — consistency beats perfection
 
-**Helpful tips:**
-- Diet: Focus on whole foods and reduce processed sugar
-- Exercise: Even a 20-minute daily walk makes a difference
-- Habit: Prioritize 7–9 hours of sleep — poor sleep worsens hormonal imbalance
+**Quick tips**
+- Cut back on processed sugar and refined carbs
+- Aim for 7–9 hours of sleep — poor sleep disrupts hormones
 
 *This is for educational purposes only. Please consult a healthcare professional.*`,
 
   `**Insulin Resistance & PCOS**
 
-Insulin resistance means your body's cells don't respond well to insulin, causing blood sugar to stay elevated. This is closely linked to PCOS and can make symptoms worse — but it's very much within your control.
+**What's happening**
+With insulin resistance, your cells don't respond well to insulin, so blood sugar stays high. This is linked to PCOS and can make symptoms worse — but lifestyle changes help a lot.
 
-**What you can do:**
-- Eat balanced meals with protein + fiber + healthy fats at every meal
+**What you can do**
+- Pair every meal with protein + fiber + healthy fat
+- Take a 10-minute walk after meals to lower blood sugar
 - Avoid skipping meals, especially breakfast
-- Move your body after meals — even a 10-minute walk helps lower blood sugar
 
-**Helpful tips:**
-- Diet: Swap white rice/bread for brown rice, oats, or quinoa
-- Exercise: Strength training 2–3x per week improves insulin sensitivity
-- Habit: Reduce sugary drinks — opt for water, herbal teas, or sparkling water
+**Quick tips**
+- Swap white bread/rice for oats, quinoa, or brown rice
+- Replace sugary drinks with water, herbal tea, or sparkling water
 
 *This is for educational purposes only. Please consult a healthcare professional.*`,
 
-  `**Common PCOS Symptoms**
+  `**PCOS Symptoms Checklist**
 
-PCOS looks different for everyone. You might experience some or all of these symptoms — and that's completely okay. Knowing what to look for is the first step.
+**What's happening**
+PCOS symptoms vary widely — you may have just a few or several. Recognizing them helps you track progress and have better conversations with your doctor.
 
-**Common symptoms include:**
-- Irregular or missed periods
-- Acne, especially along the jawline and chin
-- Unwanted hair growth (face, chest, back)
-- Hair thinning on the scalp
-- Difficulty losing weight
-- Low energy or mood changes
+**What you can do**
+- Note which symptoms you experience: irregular periods, acne, hair thinning, weight changes, low energy, unwanted hair growth
+- Rate each symptom weekly (1–5) to spot trends
+- Bring your log to your next appointment
 
-**What you can do:**
-- Log your symptoms weekly to track changes
-- Talk openly with your doctor about what bothers you most
-- Address one symptom at a time — small wins add up
-
-**Helpful tips:**
-- Diet: Anti-inflammatory foods (berries, leafy greens, fatty fish) can reduce acne and bloating
-- Habit: Stress management (meditation, journaling) can help regulate hormones
+**Quick tips**
+- Anti-inflammatory foods (berries, leafy greens, fatty fish) can ease acne and bloating
+- Stress reduction through journaling or meditation supports hormone balance
 
 *This is for educational purposes only. Please consult a healthcare professional.*`,
 
-  `**PCOS-Friendly Diet**
+  `**Best Diet for PCOS**
 
-Food is one of the most powerful tools for managing PCOS. The goal isn't to restrict — it's to nourish your body in a way that balances hormones and keeps blood sugar stable.
+**What's happening**
+Food directly affects your hormones and insulin levels. A PCOS-friendly diet focuses on stable blood sugar — not restriction.
 
-**What you can do:**
-- Build your plate: ½ vegetables, ¼ protein, ¼ complex carbs
-- Eat every 3–4 hours to keep blood sugar steady
+**What you can do**
+- Build your plate: ½ vegetables, ¼ lean protein, ¼ complex carbs
+- Eat every 3–4 hours to avoid blood sugar spikes
 - Stay hydrated — aim for 6–8 glasses of water daily
 
-**Helpful tips:**
-- Eat more of: leafy greens, eggs, salmon, lentils, berries, nuts, seeds
-- Limit: white bread, sugary cereals, fried foods, sodas
-- Habit: Meal prep on Sundays to make healthy eating easier during the week
+**Quick tips**
+- Eat more: leafy greens, eggs, salmon, lentils, berries, nuts
+- Limit: white bread, sugary cereals, fried foods, fizzy drinks
 
 *This is for educational purposes only. Please consult a healthcare professional.*`,
 
   `**Exercise & PCOS**
 
-Movement is a natural hormone balancer. The good news? You don't need intense workouts — consistency matters far more than intensity.
+**What's happening**
+Movement naturally lowers insulin, reduces androgens, and improves mood. You don't need intense workouts — consistency is what matters most.
 
-**What you can do:**
-- Aim for 150 minutes of moderate activity per week (that's just 30 min, 5 days)
-- Mix cardio and strength training for best results
-- Start where you are — even stretching or yoga counts
+**What you can do**
+- Aim for 30 minutes of activity most days (walking counts!)
+- Add strength training 2–3x per week to build insulin-sensitive muscle
+- Start small — even 10-minute sessions add up
 
-**Helpful tips:**
-- Cardio: Walking, cycling, swimming, or dancing all support heart health and insulin sensitivity
-- Strength: Bodyweight exercises (squats, lunges, push-ups) help build muscle and regulate hormones
-- Habit: Find movement you enjoy — you're more likely to stick with it
+**Quick tips**
+- Cardio: walking, cycling, swimming, or dancing
+- Recovery: yoga or stretching helps balance cortisol levels
+
+*This is for educational purposes only. Please consult a healthcare professional.*`,
+
+  `**How to Regulate Periods Naturally**
+
+**What's happening**
+Irregular periods with PCOS are caused by hormonal imbalance — mainly elevated androgens and insulin disrupting ovulation. Lifestyle changes can help restore rhythm.
+
+**What you can do**
+- Reduce refined sugar and carbs to lower insulin spikes
+- Exercise regularly — even 20–30 min of walking most days helps
+- Manage stress: high cortisol disrupts your cycle further
+
+**Quick tips**
+- Spearmint tea (1–2 cups daily) may help lower androgen levels
+- Consistent sleep and wake times support hormonal rhythm
 
 *This is for educational purposes only. Please consult a healthcare professional.*`,
 
   `**Managing Stress with PCOS**
 
-Stress triggers cortisol, which can throw your hormones further out of balance and worsen PCOS symptoms. Managing stress isn't a luxury — it's a key part of your care.
+**What's happening**
+Stress raises cortisol, which throws other hormones further out of balance and can worsen PCOS symptoms like irregular periods and weight gain.
 
-**What you can do:**
-- Practice deep breathing for 5 minutes when you feel overwhelmed
-- Set boundaries around your schedule and protect your rest time
-- Connect with others who understand — PCOS communities can be a great source of support
+**What you can do**
+- Try 5 minutes of deep breathing or a short walk when overwhelmed
+- Protect your sleep — aim for a consistent bedtime
+- Connect with a PCOS support community for shared experience
 
-**Helpful tips:**
-- Diet: Magnesium-rich foods (dark chocolate, spinach, almonds) support stress response
-- Exercise: Yoga and Pilates are especially helpful for stress and hormonal balance
-- Habit: Limit caffeine after noon — it can amplify cortisol and disrupt sleep
+**Quick tips**
+- Magnesium-rich foods (spinach, almonds, dark chocolate) ease stress response
+- Limit caffeine after noon to protect sleep quality
 
 *This is for educational purposes only. Please consult a healthcare professional.*`,
 ];
