@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Disclaimer from "@/components/Disclaimer";
+import { useSavedAnswers } from "@/hooks/useSavedAnswers";
 
 interface Message {
   id: string;
@@ -22,7 +23,9 @@ export default function ChatPage() {
   ]);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
+  const [justSaved, setJustSaved] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const { saveAnswer, isSaved } = useSavedAnswers();
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -80,6 +83,14 @@ export default function ChatPage() {
     }
   };
 
+  const handleSave = (content: string, messageId: string) => {
+    const saved = saveAnswer(content);
+    if (saved) {
+      setJustSaved(messageId);
+      setTimeout(() => setJustSaved(null), 2000);
+    }
+  };
+
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
@@ -110,7 +121,7 @@ export default function ChatPage() {
             {messages.map((message) => (
               <div
                 key={message.id}
-                className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
+                className={`flex flex-col ${message.role === "user" ? "items-end" : "items-start"}`}
               >
                 <div
                   className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
@@ -127,19 +138,52 @@ export default function ChatPage() {
                           line.startsWith("Quick tips:");
                         return (
                           <span key={i}>
-                            {isHeader ? (
-                              <strong>{line}</strong>
-                            ) : (
-                              line
-                            )}
-                            {i < message.content.split("\n").length - 1 && (
-                              <br />
-                            )}
+                            {isHeader ? <strong>{line}</strong> : line}
+                            {i < message.content.split("\n").length - 1 && <br />}
                           </span>
                         );
                       })
                     : message.content}
                 </div>
+
+                {/* Save Answer button — assistant messages only, skip the greeting */}
+                {message.role === "assistant" && message.id !== "1" && (
+                  <button
+                    onClick={() => handleSave(message.content, message.id)}
+                    disabled={isSaved(message.content)}
+                    className={`mt-1.5 flex items-center gap-1.5 text-xs px-3 py-1 rounded-full border transition-colors ${
+                      justSaved === message.id
+                        ? "border-green-400 text-green-600 bg-green-50"
+                        : isSaved(message.content)
+                        ? "border-pink-200 text-pink-400 bg-pink-50 cursor-default"
+                        : "border-gray-200 text-gray-500 bg-white hover:border-pink-300 hover:text-pink-600 hover:bg-pink-50"
+                    }`}
+                    aria-label="Save this answer"
+                  >
+                    {justSaved === message.id ? (
+                      <>
+                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        Saved!
+                      </>
+                    ) : isSaved(message.content) ? (
+                      <>
+                        <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M5 3a2 2 0 00-2 2v16l7-3 7 3V5a2 2 0 00-2-2H5z" />
+                        </svg>
+                        Saved
+                      </>
+                    ) : (
+                      <>
+                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3a2 2 0 00-2 2v16l7-3 7 3V5a2 2 0 00-2-2H5z" />
+                        </svg>
+                        Save answer
+                      </>
+                    )}
+                  </button>
+                )}
               </div>
             ))}
             {isTyping && (
