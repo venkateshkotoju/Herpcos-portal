@@ -1,9 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+// NOTE: client is created inside the handler so it is never instantiated
+// at build time (which would throw when OPENAI_API_KEY is not set).
+function getOpenAIClient() {
+  if (!process.env.OPENAI_API_KEY) {
+    throw new Error("OPENAI_API_KEY environment variable is not set.");
+  }
+  return new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+}
 
 const SYSTEM_PROMPT = `You are HerPCOS Assistant — a warm, knowledgeable companion for people managing Polycystic Ovary Syndrome (PCOS). You speak like a trusted friend who happens to know a lot about PCOS, not like a medical textbook.
 
@@ -71,6 +76,8 @@ RESPONSE LENGTH: 120–180 words total. Be warm and complete, but never padded.`
 
 export async function POST(req: NextRequest) {
   try {
+    const openai = getOpenAIClient();
+
     const body = await req.json();
     const { messages } = body;
 
