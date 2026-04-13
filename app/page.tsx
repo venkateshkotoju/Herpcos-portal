@@ -182,6 +182,132 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* How This Helps You Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-3xl px-8 py-14 sm:px-14">
+          {/* Heading */}
+          <div className="text-center mb-14">
+            <span className="inline-block bg-white text-pink-600 text-sm font-semibold px-4 py-1.5 rounded-full shadow-sm border border-pink-100 mb-4">
+              Built for you
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              How this helps you
+            </h2>
+            <p className="text-gray-500 max-w-xl mx-auto text-base leading-relaxed">
+              PCOS can feel overwhelming. HerPCOS breaks it down into clear,
+              manageable steps — so you always know what&apos;s happening and what to do next.
+            </p>
+          </div>
+
+          {/* Steps */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Step 1 */}
+            <div className="bg-white rounded-2xl p-7 shadow-sm border border-pink-100 flex flex-col gap-4">
+              <div className="flex items-center gap-3">
+                <span className="w-9 h-9 rounded-full bg-pink-100 text-pink-600 font-bold text-sm flex items-center justify-center shrink-0">
+                  1
+                </span>
+                <h3 className="text-lg font-semibold text-gray-900">
+                  Understand your symptoms
+                </h3>
+              </div>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Get plain-English explanations of what&apos;s happening in your
+                body — no confusing medical jargon. Know why you feel the way
+                you do.
+              </p>
+              <ul className="space-y-2 mt-1">
+                {[
+                  "Irregular periods & cycle changes",
+                  "Weight changes & insulin resistance",
+                  "Acne, hair loss & androgen effects",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-gray-600">
+                    <svg className="w-4 h-4 text-pink-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Step 2 */}
+            <div className="bg-white rounded-2xl p-7 shadow-sm border border-purple-100 flex flex-col gap-4">
+              <div className="flex items-center gap-3">
+                <span className="w-9 h-9 rounded-full bg-purple-100 text-purple-600 font-bold text-sm flex items-center justify-center shrink-0">
+                  2
+                </span>
+                <h3 className="text-lg font-semibold text-gray-900">
+                  Get simple action steps
+                </h3>
+              </div>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Every answer comes with 3–4 practical things you can do today —
+                not generic advice, but steps specific to your question.
+              </p>
+              <ul className="space-y-2 mt-1">
+                {[
+                  "Personalised to your concern",
+                  "Diet, exercise & habit tips included",
+                  "Save answers to revisit anytime",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-gray-600">
+                    <svg className="w-4 h-4 text-purple-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Step 3 */}
+            <div className="bg-white rounded-2xl p-7 shadow-sm border border-rose-100 flex flex-col gap-4">
+              <div className="flex items-center gap-3">
+                <span className="w-9 h-9 rounded-full bg-rose-100 text-rose-500 font-bold text-sm flex items-center justify-center shrink-0">
+                  3
+                </span>
+                <h3 className="text-lg font-semibold text-gray-900">
+                  Learn to manage PCOS
+                </h3>
+              </div>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Build confidence over time. The more you ask, the better you
+                understand your body — and the more in control you feel.
+              </p>
+              <ul className="space-y-2 mt-1">
+                {[
+                  "Long-term lifestyle strategies",
+                  "Hormone & cycle regulation support",
+                  "Available 24/7, always free",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-gray-600">
+                    <svg className="w-4 h-4 text-rose-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="mt-10 text-center">
+            <Link
+              href="/chat"
+              className="inline-flex items-center gap-2 bg-pink-600 text-white px-8 py-3.5 rounded-full text-base font-semibold hover:bg-pink-700 transition-colors shadow-md shadow-pink-200"
+            >
+              Ask your first question
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Stats Section */}
       <section className="bg-pink-600 py-16 mt-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
