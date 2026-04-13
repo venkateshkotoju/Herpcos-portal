@@ -42,6 +42,15 @@ export default function Navbar() {
               Q&amp;A
             </Link>
             <Link
+              href="/saved"
+              className="text-gray-700 hover:text-pink-600 font-medium transition-colors flex items-center gap-1.5"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+              </svg>
+              Saved
+            </Link>
+            <Link
               href="/chat"
               className="bg-pink-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-pink-700 transition-colors"
             >
@@ -106,6 +115,16 @@ export default function Navbar() {
                 onClick={() => setMenuOpen(false)}
               >
                 Q&amp;A
+              </Link>
+              <Link
+                href="/saved"
+                className="text-gray-700 hover:text-pink-600 font-medium px-2 py-1 flex items-center gap-1.5"
+                onClick={() => setMenuOpen(false)}
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                </svg>
+                Saved
               </Link>
             </div>
           </div>

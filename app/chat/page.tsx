@@ -1,7 +1,9 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
 import Disclaimer from "@/components/Disclaimer";
+import { useSavedAnswers } from "@/hooks/useSavedAnswers";
 
 interface Message {
   id: string;
@@ -23,6 +25,7 @@ export default function ChatPage() {
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const { saveAnswer, isSaved } = useSavedAnswers();
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -97,6 +100,15 @@ export default function ChatPage() {
           <p className="text-gray-500">
             Ask anything about PCOS, symptoms, treatments, or lifestyle tips.
           </p>
+          <Link
+            href="/saved"
+            className="inline-flex items-center gap-1.5 mt-3 text-sm text-pink-600 hover:text-pink-700 font-medium"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+            </svg>
+            View saved answers
+          </Link>
         </div>
 
         {/* Disclaimer */}
@@ -109,7 +121,7 @@ export default function ChatPage() {
             {messages.map((message) => (
               <div
                 key={message.id}
-                className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
+                className={`flex flex-col ${message.role === "user" ? "items-end" : "items-start"}`}
               >
                 <div
                   className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
@@ -120,6 +132,32 @@ export default function ChatPage() {
                 >
                   {message.content}
                 </div>
+                {message.role === "assistant" && message.id !== "1" && (
+                  <button
+                    onClick={() => saveAnswer(message.content)}
+                    disabled={isSaved(message.content)}
+                    className={`mt-1.5 flex items-center gap-1.5 text-xs px-3 py-1 rounded-full border transition-colors ${
+                      isSaved(message.content)
+                        ? "border-pink-300 text-pink-500 bg-pink-50 cursor-default"
+                        : "border-gray-200 text-gray-500 hover:border-pink-300 hover:text-pink-600 hover:bg-pink-50"
+                    }`}
+                  >
+                    <svg
+                      className="w-3.5 h-3.5"
+                      fill={isSaved(message.content) ? "currentColor" : "none"}
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
+                      />
+                    </svg>
+                    {isSaved(message.content) ? "Saved" : "Save answer"}
+                  </button>
+                )}
               </div>
             ))}
             {isTyping && (
