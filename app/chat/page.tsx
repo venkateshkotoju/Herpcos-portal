@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Disclaimer from "@/components/Disclaimer";
 import { useSavedAnswers } from "@/hooks/useSavedAnswers";
+import { track } from "@vercel/analytics";
 
 interface Message {
   id: string;
@@ -44,6 +45,7 @@ export default function ChatPage() {
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
     setIsTyping(true);
+    track("message_sent");
 
     // Call /api/chat
     try {
@@ -134,7 +136,7 @@ export default function ChatPage() {
                 </div>
                 {message.role === "assistant" && message.id !== "1" && (
                   <button
-                    onClick={() => saveAnswer(message.content)}
+                    onClick={() => { saveAnswer(message.content); track("answer_saved"); }}
                     disabled={isSaved(message.content)}
                     className={`mt-1.5 flex items-center gap-1.5 text-xs px-3 py-1 rounded-full border transition-colors ${
                       isSaved(message.content)
