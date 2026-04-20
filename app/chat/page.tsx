@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Disclaimer from "@/components/Disclaimer";
+import Textarea from "@/components/Textarea";
 
 interface Message {
   id: string;
@@ -126,13 +127,13 @@ export default function ChatPage() {
           {/* Input Area */}
           <div className="border-t border-gray-100 p-4">
             <div className="flex items-end gap-3">
-              <textarea
+              <Textarea
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
                 rows={2}
                 placeholder="Ask about PCOS symptoms, treatments, diet..."
-                className="flex-1 resize-none rounded-xl border border-gray-200 px-4 py-3 text-sm text-gray-900 bg-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-300 focus:border-transparent"
+                className="flex-1 resize-none"
               />
               <button
                 onClick={handleSend}

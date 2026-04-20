@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Disclaimer from "@/components/Disclaimer";
+import Input from "@/components/Input";
 
 interface QAItem {
   id: string;
@@ -134,12 +135,12 @@ export default function QAPage() {
               d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
             />
           </svg>
-          <input
+          <Input
             type="text"
             placeholder="Search questions..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-300 focus:border-transparent bg-white text-sm"
+            className="w-full pl-12 pr-4"
           />
         </div>
 
