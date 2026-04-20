@@ -218,74 +218,75 @@ export default function HomePage() {
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {[
-            {
-              href: "/pcos-symptoms",
-              title: "PCOS Symptoms",
-              description:
-                "Recognize the signs of PCOS — from irregular periods and acne to fatigue and mood changes.",
-              iconPath:
-                "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2",
-              color: "pink",
-            },
-            {
-              href: "/pcos-diet-guide",
-              title: "PCOS Diet Guide",
-              description:
-                "The best foods to eat and avoid for insulin resistance, hormone balance, and PCOS relief.",
-              iconPath:
-                "M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z",
-              color: "purple",
-            },
-            {
-              href: "/pcos-weight-loss",
-              title: "PCOS Weight Loss",
-              description:
-                "Why PCOS makes weight loss harder and proven strategies that actually work.",
-              iconPath: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6",
-              color: "rose",
-            },
-            {
-              href: "/pcos-irregular-periods",
-              title: "Irregular Periods",
-              description:
-                "Why PCOS disrupts your cycle and how to regulate your period naturally and medically.",
-              iconPath:
-                "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z",
-              color: "pink",
-            },
-          ].map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="group bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-pink-200 transition-all"
-            >
-              <div className={`w-10 h-10 bg-${item.color}-100 rounded-xl flex items-center justify-center mb-4`}>
-                <svg
-                  className={`w-5 h-5 text-${item.color}-600`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d={item.iconPath}
-                  />
-                </svg>
-              </div>
-              <h3 className="font-semibold text-gray-900 mb-2 text-sm">
-                {item.title}
-              </h3>
-              <p className="text-gray-500 text-xs leading-relaxed mb-3">
-                {item.description}
-              </p>
-              <span className="text-pink-600 text-xs font-medium group-hover:underline">
-                Read guide →
-              </span>
-            </Link>
-          ))}
+
+          {/* PCOS Symptoms */}
+          <Link
+            href="/pcos-symptoms"
+            className="group bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-pink-200 transition-all"
+          >
+            <div className="w-10 h-10 bg-pink-100 rounded-xl flex items-center justify-center mb-4">
+              <svg className="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+              </svg>
+            </div>
+            <h3 className="font-semibold text-gray-900 mb-2 text-sm">PCOS Symptoms</h3>
+            <p className="text-gray-500 text-xs leading-relaxed mb-3">
+              Recognize the signs of PCOS — from irregular periods and acne to fatigue and mood changes.
+            </p>
+            <span className="text-pink-600 text-xs font-medium group-hover:underline">Read guide →</span>
+          </Link>
+
+          {/* PCOS Diet Guide */}
+          <Link
+            href="/pcos-diet-guide"
+            className="group bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-purple-200 transition-all"
+          >
+            <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+              <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <h3 className="font-semibold text-gray-900 mb-2 text-sm">PCOS Diet Guide</h3>
+            <p className="text-gray-500 text-xs leading-relaxed mb-3">
+              The best foods to eat and avoid for insulin resistance, hormone balance, and PCOS relief.
+            </p>
+            <span className="text-purple-600 text-xs font-medium group-hover:underline">Read guide →</span>
+          </Link>
+
+          {/* PCOS Weight Loss */}
+          <Link
+            href="/pcos-weight-loss"
+            className="group bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-rose-200 transition-all"
+          >
+            <div className="w-10 h-10 bg-rose-100 rounded-xl flex items-center justify-center mb-4">
+              <svg className="w-5 h-5 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+              </svg>
+            </div>
+            <h3 className="font-semibold text-gray-900 mb-2 text-sm">PCOS Weight Loss</h3>
+            <p className="text-gray-500 text-xs leading-relaxed mb-3">
+              Why PCOS makes weight loss harder and proven strategies that actually work.
+            </p>
+            <span className="text-rose-600 text-xs font-medium group-hover:underline">Read guide →</span>
+          </Link>
+
+          {/* Irregular Periods */}
+          <Link
+            href="/pcos-irregular-periods"
+            className="group bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-pink-200 transition-all"
+          >
+            <div className="w-10 h-10 bg-pink-100 rounded-xl flex items-center justify-center mb-4">
+              <svg className="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 className="font-semibold text-gray-900 mb-2 text-sm">Irregular Periods</h3>
+            <p className="text-gray-500 text-xs leading-relaxed mb-3">
+              Why PCOS disrupts your cycle and how to regulate your period naturally and medically.
+            </p>
+            <span className="text-pink-600 text-xs font-medium group-hover:underline">Read guide →</span>
+          </Link>
+
         </div>
 
         {/* Not sure nudge */}
