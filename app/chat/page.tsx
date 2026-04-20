@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
 import Disclaimer from "@/components/Disclaimer";
 
 interface Message {
@@ -182,6 +183,75 @@ export default function ChatPage() {
               </button>
             ))}
           </div>
+        </div>
+
+        {/* SEO Guide Links */}
+        <div className="mt-8">
+          <p className="text-sm font-medium text-gray-500 mb-3">
+            Not sure where to start? Browse our PCOS guides:
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {[
+              {
+                href: "/pcos-symptoms",
+                label: "PCOS Symptoms",
+                description: "What to look for and when to see a doctor",
+              },
+              {
+                href: "/pcos-diet-guide",
+                label: "PCOS Diet Guide",
+                description: "Best foods to eat and avoid",
+              },
+              {
+                href: "/pcos-weight-loss",
+                label: "PCOS Weight Loss",
+                description: "Why it's hard and what actually works",
+              },
+              {
+                href: "/pcos-irregular-periods",
+                label: "Irregular Periods",
+                description: "Causes and how to regulate your cycle",
+              },
+            ].map((guide) => (
+              <Link
+                key={guide.href}
+                href={guide.href}
+                className="group flex items-center justify-between bg-white border border-gray-100 rounded-xl px-4 py-3 hover:border-pink-200 hover:bg-pink-50 transition-colors"
+              >
+                <div>
+                  <p className="text-sm font-medium text-gray-800 group-hover:text-pink-700">
+                    {guide.label}
+                  </p>
+                  <p className="text-xs text-gray-400">{guide.description}</p>
+                </div>
+                <svg
+                  className="w-4 h-4 text-gray-300 group-hover:text-pink-500 flex-shrink-0 ml-3"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </Link>
+            ))}
+          </div>
+          <p className="text-xs text-gray-400 mt-3 text-center">
+            Not sure?{" "}
+            <button
+              onClick={() =>
+                setInput("I'm not sure where to start with PCOS. Can you help?")
+              }
+              className="text-pink-600 font-medium hover:underline"
+            >
+              Ask our AI assistant
+            </button>{" "}
+            and we&apos;ll point you in the right direction.
+          </p>
         </div>
       </div>
     </div>
