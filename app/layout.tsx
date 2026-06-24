@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 const SITE_URL = "https://herpcos.com";
 const SITE_NAME = "HerPCOS Portal";
-const OG_IMAGE = `${SITE_URL}/og-image.png`;
+const OG_IMAGE = `${SITE_URL}/opengraph-image`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
