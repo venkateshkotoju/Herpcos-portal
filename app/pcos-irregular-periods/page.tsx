@@ -1,10 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import NewsletterSignup from "@/components/NewsletterSignup";
+import AuthorCard from "@/components/AuthorCard";
 
 export const metadata: Metadata = {
   title: "PCOS and Irregular Periods: Causes & What to Do | HerPCOS Portal",
   description:
     "Learn why PCOS causes irregular, missed, or heavy periods, how to track your cycle, and what treatment options exist. Clear, beginner-friendly guide.",
+  openGraph: {
+    title: "PCOS and Irregular Periods: Causes & What to Do",
+    description:
+      "Learn why PCOS causes irregular, missed, or heavy periods, how to track your cycle, and what treatment options exist.",
+    url: "https://herpcos.com/pcos-irregular-periods",
+    type: "article",
+  },
 };
 
 const CYCLE_TYPES = [
@@ -100,9 +109,23 @@ const RELATED = [
   { href: "/insulin-resistance-pcos", label: "Insulin Resistance & PCOS" },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 export default function PcosIrregularPeriodsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-purple-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       {/* Hero */}
       <div className="bg-gradient-to-r from-pink-600 to-purple-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
@@ -116,10 +139,15 @@ export default function PcosIrregularPeriodsPage() {
             Why PCOS disrupts your cycle, what types of irregularity to expect,
             and the treatment options that can help.
           </p>
+          <p className="text-pink-200 text-xs mt-4">Last reviewed: June 24, 2025</p>
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+        <AuthorCard lastUpdated="June 24, 2025" />
+      </div>
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 space-y-10">
         {/* How PCOS Affects the Cycle */}
         <section className="bg-white rounded-2xl border border-pink-100 shadow-sm p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">
@@ -250,6 +278,9 @@ export default function PcosIrregularPeriodsPage() {
             Ask the AI Chat Assistant →
           </Link>
         </section>
+
+        {/* Newsletter */}
+        <NewsletterSignup />
 
         {/* Related Guides */}
         <section>

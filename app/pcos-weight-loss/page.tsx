@@ -1,10 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import NewsletterSignup from "@/components/NewsletterSignup";
+import AuthorCard from "@/components/AuthorCard";
 
 export const metadata: Metadata = {
   title: "PCOS Weight Loss Guide: What Actually Works | HerPCOS Portal",
   description:
     "Struggling to lose weight with PCOS? Learn why it's harder, what actually helps, and evidence-based strategies for lasting results. Beginner-friendly.",
+  openGraph: {
+    title: "PCOS Weight Loss Guide: What Actually Works",
+    description:
+      "Struggling to lose weight with PCOS? Learn why it's harder and what evidence-based strategies actually work.",
+    url: "https://herpcos.com/pcos-weight-loss",
+    type: "article",
+  },
 };
 
 const STRATEGIES = [
@@ -107,9 +116,23 @@ const RELATED = [
   { href: "/insulin-resistance-pcos", label: "Insulin Resistance & PCOS" },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 export default function PcosWeightLossPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-purple-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       {/* Hero */}
       <div className="bg-gradient-to-r from-pink-600 to-purple-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
@@ -123,10 +146,15 @@ export default function PcosWeightLossPage() {
             Why weight loss feels impossible with PCOS — and what actually
             works, based on science, not fads.
           </p>
+          <p className="text-pink-200 text-xs mt-4">Last reviewed: June 24, 2025</p>
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+        <AuthorCard lastUpdated="June 24, 2025" />
+      </div>
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 space-y-10">
         {/* Why It's Harder */}
         <section className="bg-white rounded-2xl border border-pink-100 shadow-sm p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">
@@ -255,6 +283,9 @@ export default function PcosWeightLossPage() {
             Ask the AI Chat Assistant →
           </Link>
         </section>
+
+        {/* Newsletter */}
+        <NewsletterSignup />
 
         {/* Related Guides */}
         <section>

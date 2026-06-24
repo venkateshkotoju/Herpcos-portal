@@ -1,5 +1,20 @@
 import Link from "next/link";
 import Disclaimer from "@/components/Disclaimer";
+import NewsletterSignup from "@/components/NewsletterSignup";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "HerPCOS Portal — AI-Powered PCOS Support & Information",
+  description:
+    "HerPCOS helps women with PCOS understand their symptoms, diet, hormones, and treatment options. Free AI-powered guidance, expert guides, and community Q&A — available 24/7.",
+  openGraph: {
+    title: "HerPCOS Portal — AI-Powered PCOS Support",
+    description:
+      "Free AI-powered PCOS guidance, expert guides on symptoms, diet, weight loss, and hormones — available 24/7.",
+    url: "https://herpcos.com",
+    type: "website",
+  },
+};
 
 export default function HomePage() {
   return (
@@ -271,6 +286,11 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Newsletter */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <NewsletterSignup />
       </section>
 
       {/* Disclaimer */}

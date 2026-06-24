@@ -1,8 +1,26 @@
 import Link from "next/link";
+import NewsletterSignup from "@/components/NewsletterSignup";
 
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300 mt-auto">
+      {/* Newsletter Banner */}
+      <div className="border-b border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div>
+              <p className="text-white font-semibold text-sm">
+                Free PCOS Symptom Checklist + Weekly Tips
+              </p>
+              <p className="text-gray-400 text-xs mt-0.5">
+                Join women managing PCOS with evidence-based guidance.
+              </p>
+            </div>
+            <NewsletterSignup variant="compact" />
+          </div>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           {/* Brand */}
@@ -15,9 +33,9 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
-              AI-powered PCOS support with a chatbot, community Q&amp;A, and
-              hormone health guidance — designed with care for every woman&apos;s
-              journey.
+              AI-powered PCOS support with evidence-based guides, community
+              Q&amp;A, and hormone health information — designed with care for
+              every woman&apos;s journey.
             </p>
           </div>
 
@@ -32,7 +50,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/chat" className="hover:text-pink-400 transition-colors">
-                  Chat
+                  AI Chat
                 </Link>
               </li>
               <li>
@@ -124,7 +142,8 @@ export default function Footer() {
             reserved.
           </p>
           <p className="mt-1">
-            Built with care for the PCOS community. Not a medical device.
+            Built with care for the PCOS community. Not a medical device. Not
+            FDA-regulated.
           </p>
         </div>
       </div>
