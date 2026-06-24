@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300 mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-1 mb-3">
@@ -48,6 +48,38 @@ export default function Footer() {
               <li>
                 <Link href="/contact" className="hover:text-pink-400 transition-colors">
                   Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Guides */}
+          <div>
+            <h3 className="text-white font-semibold mb-3">PCOS Guides</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/pcos-symptoms" className="hover:text-pink-400 transition-colors">
+                  PCOS Symptoms
+                </Link>
+              </li>
+              <li>
+                <Link href="/pcos-diet" className="hover:text-pink-400 transition-colors">
+                  Best Diet for PCOS
+                </Link>
+              </li>
+              <li>
+                <Link href="/pcos-weight-loss" className="hover:text-pink-400 transition-colors">
+                  Weight Loss Guide
+                </Link>
+              </li>
+              <li>
+                <Link href="/pcos-irregular-periods" className="hover:text-pink-400 transition-colors">
+                  Irregular Periods
+                </Link>
+              </li>
+              <li>
+                <Link href="/insulin-resistance-pcos" className="hover:text-pink-400 transition-colors">
+                  Insulin Resistance
                 </Link>
               </li>
             </ul>

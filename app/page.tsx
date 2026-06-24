@@ -182,6 +182,73 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* PCOS Guides Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold text-gray-900 mb-3">
+            PCOS Guides
+          </h2>
+          <p className="text-gray-500 max-w-xl mx-auto">
+            Free, beginner-friendly guides on the most important PCOS topics —
+            written clearly, backed by research.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {[
+            {
+              href: "/pcos-symptoms",
+              emoji: "🔍",
+              title: "PCOS Symptoms Guide",
+              desc: "Understand the 10 most common PCOS symptoms and when to see a doctor.",
+              color: "border-pink-100",
+            },
+            {
+              href: "/pcos-diet",
+              emoji: "🥗",
+              title: "Best Diet for PCOS",
+              desc: "What to eat, what to avoid, and why food choices matter so much for PCOS.",
+              color: "border-purple-100",
+            },
+            {
+              href: "/pcos-weight-loss",
+              emoji: "⚖️",
+              title: "PCOS Weight Loss Guide",
+              desc: "Why weight loss is harder with PCOS and the strategies that actually work.",
+              color: "border-pink-100",
+            },
+            {
+              href: "/pcos-irregular-periods",
+              emoji: "📅",
+              title: "PCOS & Irregular Periods",
+              desc: "Why PCOS disrupts your cycle and the treatment options available.",
+              color: "border-purple-100",
+            },
+            {
+              href: "/insulin-resistance-pcos",
+              emoji: "💉",
+              title: "Insulin Resistance & PCOS",
+              desc: "The core link between insulin and PCOS — explained simply, with next steps.",
+              color: "border-pink-100",
+            },
+          ].map((guide) => (
+            <Link
+              key={guide.href}
+              href={guide.href}
+              className={`bg-white rounded-2xl p-6 shadow-sm border ${guide.color} hover:shadow-md transition-shadow group`}
+            >
+              <div className="text-3xl mb-3">{guide.emoji}</div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-pink-600 transition-colors">
+                {guide.title}
+              </h3>
+              <p className="text-gray-500 text-sm leading-relaxed">{guide.desc}</p>
+              <span className="inline-block mt-4 text-sm text-pink-600 font-medium">
+                Read guide →
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* Stats Section */}
       <section className="bg-pink-600 py-16 mt-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
