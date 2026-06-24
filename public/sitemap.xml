@@ -1,68 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
   <url>
     <loc>https://herpcos.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <lastmod>2025-06-24</lastmod>
+  </url>
+
+  <!-- PCOS Guides — primary SEO pages, highest priority after homepage -->
+  <url>
+    <loc>https://herpcos.com/pcos-symptoms</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <lastmod>2025-06-24</lastmod>
   </url>
   <url>
-    <loc>https://herpcos.com/chat</loc>
+    <loc>https://herpcos.com/pcos-diet</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
+    <lastmod>2025-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://herpcos.com/pcos-weight-loss</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <lastmod>2025-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://herpcos.com/pcos-irregular-periods</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <lastmod>2025-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://herpcos.com/insulin-resistance-pcos</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <lastmod>2025-06-24</lastmod>
+  </url>
+
+  <!-- App features — important but not primary SEO targets -->
+  <url>
+    <loc>https://herpcos.com/chat</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-06-24</lastmod>
   </url>
   <url>
     <loc>https://herpcos.com/qa</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-06-24</lastmod>
   </url>
+
+  <!-- Brand pages -->
   <url>
     <loc>https://herpcos.com/about</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
+    <lastmod>2025-06-24</lastmod>
   </url>
   <url>
     <loc>https://herpcos.com/contact</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.5</priority>
+    <lastmod>2025-06-24</lastmod>
   </url>
-  <url>
-    <loc>https://herpcos.com/medical-disclaimer</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
+
+  <!-- Legal pages — noindexed but still crawlable via sitemap for trust signals -->
   <url>
     <loc>https://herpcos.com/privacy-policy</loc>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.3</priority>
+    <lastmod>2025-06-24</lastmod>
   </url>
   <url>
     <loc>https://herpcos.com/terms-of-service</loc>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.3</priority>
+    <lastmod>2025-06-24</lastmod>
   </url>
   <url>
-    <loc>https://herpcos.com/pcos-symptoms</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://herpcos.com/pcos-diet</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://herpcos.com/pcos-weight-loss</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://herpcos.com/pcos-irregular-periods</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://herpcos.com/insulin-resistance-pcos</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://herpcos.com/medical-disclaimer</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2025-06-24</lastmod>
   </url>
 </urlset>

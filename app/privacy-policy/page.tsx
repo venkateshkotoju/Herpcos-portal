@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy – HerPCOS Portal",
   description:
     "Learn how HerPCOS Portal collects, uses, and protects your personal and health information.",
+  robots: { index: false, follow: true },
 };
 
 const SECTIONS = [

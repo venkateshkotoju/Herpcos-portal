@@ -1,10 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import NewsletterSignup from "@/components/NewsletterSignup";
 
 export const metadata: Metadata = {
   title: "Insulin Resistance and PCOS: The Connection Explained | HerPCOS Portal",
   description:
     "Learn what insulin resistance is, why it's linked to PCOS, how to test for it, and natural and medical ways to manage it. Beginner-friendly guide.",
+  openGraph: {
+    title: "Insulin Resistance and PCOS: The Connection Explained",
+    description:
+      "Learn what insulin resistance is, why it's linked to PCOS, how to test for it, and natural ways to manage it.",
+    url: "https://herpcos.com/insulin-resistance-pcos",
+    type: "article",
+  },
 };
 
 const SIGNS = [
@@ -114,9 +122,23 @@ const RELATED = [
   { href: "/pcos-irregular-periods", label: "PCOS & Irregular Periods" },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 export default function InsulinResistancePcosPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-purple-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       {/* Hero */}
       <div className="bg-gradient-to-r from-pink-600 to-purple-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
@@ -130,6 +152,7 @@ export default function InsulinResistancePcosPage() {
             The connection between insulin and PCOS — explained clearly, with
             practical steps to improve your insulin sensitivity.
           </p>
+          <p className="text-pink-200 text-xs mt-4">Last reviewed: June 24, 2025</p>
         </div>
       </div>
 
@@ -268,6 +291,9 @@ export default function InsulinResistancePcosPage() {
             Ask the AI Chat Assistant →
           </Link>
         </section>
+
+        {/* Newsletter */}
+        <NewsletterSignup />
 
         {/* Related Guides */}
         <section>
