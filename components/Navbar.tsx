@@ -42,6 +42,18 @@ export default function Navbar() {
               Q&amp;A
             </Link>
             <Link
+              href="/about"
+              className="text-gray-700 hover:text-pink-600 font-medium transition-colors"
+            >
+              About
+            </Link>
+            <Link
+              href="/contact"
+              className="text-gray-700 hover:text-pink-600 font-medium transition-colors"
+            >
+              Contact
+            </Link>
+            <Link
               href="/chat"
               className="bg-pink-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-pink-700 transition-colors"
             >
@@ -106,6 +118,20 @@ export default function Navbar() {
                 onClick={() => setMenuOpen(false)}
               >
                 Q&amp;A
+              </Link>
+              <Link
+                href="/about"
+                className="text-gray-700 hover:text-pink-600 font-medium px-2 py-1"
+                onClick={() => setMenuOpen(false)}
+              >
+                About
+              </Link>
+              <Link
+                href="/contact"
+                className="text-gray-700 hover:text-pink-600 font-medium px-2 py-1"
+                onClick={() => setMenuOpen(false)}
+              >
+                Contact
               </Link>
             </div>
           </div>

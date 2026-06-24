@@ -26,27 +26,28 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-3">Navigation</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link
-                  href="/"
-                  className="hover:text-pink-400 transition-colors"
-                >
+                <Link href="/" className="hover:text-pink-400 transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/chat"
-                  className="hover:text-pink-400 transition-colors"
-                >
+                <Link href="/chat" className="hover:text-pink-400 transition-colors">
                   Chat
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/qa"
-                  className="hover:text-pink-400 transition-colors"
-                >
+                <Link href="/qa" className="hover:text-pink-400 transition-colors">
                   Q&amp;A
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="hover:text-pink-400 transition-colors">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-pink-400 transition-colors">
+                  Contact
                 </Link>
               </li>
             </ul>
@@ -54,8 +55,25 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <h3 className="text-white font-semibold mb-3">Important</h3>
-            <p className="text-sm text-gray-400 leading-relaxed">
+            <h3 className="text-white font-semibold mb-3">Legal</h3>
+            <ul className="space-y-2 text-sm mb-4">
+              <li>
+                <Link href="/privacy-policy" className="hover:text-pink-400 transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms-of-service" className="hover:text-pink-400 transition-colors">
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link href="/medical-disclaimer" className="hover:text-pink-400 transition-colors">
+                  Medical Disclaimer
+                </Link>
+              </li>
+            </ul>
+            <p className="text-xs text-gray-500 leading-relaxed">
               This portal provides general health information only. It is not a
               substitute for professional medical advice, diagnosis, or
               treatment. Always consult your healthcare provider.
