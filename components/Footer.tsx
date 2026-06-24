@@ -26,27 +26,46 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-3">Navigation</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link
-                  href="/"
-                  className="hover:text-pink-400 transition-colors"
-                >
+                <Link href="/" className="hover:text-pink-400 transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/chat"
-                  className="hover:text-pink-400 transition-colors"
-                >
+                <Link href="/chat" className="hover:text-pink-400 transition-colors">
                   Chat
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/qa"
-                  className="hover:text-pink-400 transition-colors"
-                >
+                <Link href="/qa" className="hover:text-pink-400 transition-colors">
                   Q&amp;A
+                </Link>
+              </li>
+            </ul>
+            <h3 className="text-white font-semibold mt-6 mb-3">PCOS Guides</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/pcos-symptoms" className="hover:text-pink-400 transition-colors">
+                  PCOS Symptoms Guide
+                </Link>
+              </li>
+              <li>
+                <Link href="/pcos-diet" className="hover:text-pink-400 transition-colors">
+                  Best Diet for PCOS
+                </Link>
+              </li>
+              <li>
+                <Link href="/pcos-weight-loss" className="hover:text-pink-400 transition-colors">
+                  PCOS Weight Loss
+                </Link>
+              </li>
+              <li>
+                <Link href="/pcos-irregular-periods" className="hover:text-pink-400 transition-colors">
+                  PCOS &amp; Irregular Periods
+                </Link>
+              </li>
+              <li>
+                <Link href="/insulin-resistance-pcos" className="hover:text-pink-400 transition-colors">
+                  Insulin Resistance &amp; PCOS
                 </Link>
               </li>
             </ul>
