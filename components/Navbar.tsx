@@ -9,6 +9,11 @@ const GUIDES = [
   { href: "/pcos-weight-loss", label: "Weight Loss Guide", emoji: "⚖️" },
   { href: "/pcos-irregular-periods", label: "Irregular Periods", emoji: "📅" },
   { href: "/insulin-resistance-pcos", label: "Insulin Resistance", emoji: "💉" },
+  { href: "/metformin-for-pcos", label: "Metformin for PCOS", emoji: "💊" },
+  { href: "/inositol-for-pcos", label: "Inositol for PCOS", emoji: "🌿" },
+  { href: "/pcos-hair-loss", label: "PCOS Hair Loss", emoji: "💇" },
+  { href: "/pcos-and-pregnancy", label: "PCOS & Pregnancy", emoji: "🤰" },
+  { href: "/pcos-lab-results", label: "PCOS Lab Results", emoji: "🧪" },
 ];
 
 export default function Navbar() {
