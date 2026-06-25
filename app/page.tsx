@@ -211,6 +211,13 @@ export default function HomePage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {[
             {
+              href: "/what-is-pcos",
+              emoji: "💡",
+              title: "What Is PCOS?",
+              desc: "The complete beginner's guide — causes, types, diagnosis, and treatment explained simply.",
+              color: "border-purple-100",
+            },
+            {
               href: "/pcos-symptoms",
               emoji: "🔍",
               title: "PCOS Symptoms Guide",
