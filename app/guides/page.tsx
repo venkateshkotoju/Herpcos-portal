@@ -1,0 +1,187 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import NewsletterSignup from "@/components/NewsletterSignup";
+
+export const metadata: Metadata = {
+  title: "PCOS Guides: Evidence-Based Information for Every Symptom | HerPCOS",
+  description:
+    "Free, evidence-based PCOS guides covering symptoms, diet, weight loss, hormones, medications, hair loss, fertility, lab results, and more. Written for real women.",
+  openGraph: {
+    title: "PCOS Guides: Evidence-Based Information for Every Symptom",
+    description:
+      "Free, evidence-based PCOS guides covering symptoms, diet, weight loss, hormones, medications, hair loss, fertility, lab results, and more.",
+    url: "https://herpcos.com/guides",
+    type: "website",
+  },
+};
+
+const GUIDES = [
+  {
+    category: "Understanding PCOS",
+    items: [
+      {
+        href: "/pcos-symptoms",
+        title: "PCOS Symptoms",
+        desc: "The complete guide to every PCOS symptom — from irregular periods and acne to mood changes and fatigue.",
+        emoji: "🔍",
+        badge: "Start here",
+      },
+      {
+        href: "/pcos-lab-results",
+        title: "Understanding PCOS Lab Results",
+        desc: "What every blood test means — testosterone, LH/FSH, AMH, insulin, thyroid, and more. Know your numbers.",
+        emoji: "🧪",
+        badge: null,
+      },
+      {
+        href: "/insulin-resistance-pcos",
+        title: "Insulin Resistance & PCOS",
+        desc: "Why insulin resistance drives most PCOS symptoms and what you can do to improve it.",
+        emoji: "💉",
+        badge: null,
+      },
+    ],
+  },
+  {
+    category: "Diet & Lifestyle",
+    items: [
+      {
+        href: "/pcos-diet",
+        title: "Best Diet for PCOS",
+        desc: "What to eat, what to avoid, and why food choices matter so much for managing PCOS symptoms.",
+        emoji: "🥗",
+        badge: null,
+      },
+      {
+        href: "/pcos-weight-loss",
+        title: "PCOS Weight Loss Guide",
+        desc: "Why losing weight is harder with PCOS — and the evidence-based strategies that actually work.",
+        emoji: "⚖️",
+        badge: null,
+      },
+    ],
+  },
+  {
+    category: "Treatments & Supplements",
+    items: [
+      {
+        href: "/metformin-for-pcos",
+        title: "Metformin for PCOS",
+        desc: "How this common diabetes medication targets insulin resistance, restores ovulation, and reduces androgens.",
+        emoji: "💊",
+        badge: null,
+      },
+      {
+        href: "/inositol-for-pcos",
+        title: "Inositol for PCOS",
+        desc: "Myo-inositol vs D-chiro-inositol, the 40:1 ratio, dosage, and what the research actually shows.",
+        emoji: "🌿",
+        badge: null,
+      },
+    ],
+  },
+  {
+    category: "Specific Symptoms",
+    items: [
+      {
+        href: "/pcos-irregular-periods",
+        title: "PCOS & Irregular Periods",
+        desc: "Why PCOS disrupts your cycle and what you can do to restore regular, predictable periods.",
+        emoji: "📅",
+        badge: null,
+      },
+      {
+        href: "/pcos-hair-loss",
+        title: "PCOS Hair Loss",
+        desc: "Why androgens cause scalp thinning, which treatments are backed by evidence, and how to slow loss.",
+        emoji: "💇",
+        badge: null,
+      },
+    ],
+  },
+  {
+    category: "Fertility & Pregnancy",
+    items: [
+      {
+        href: "/pcos-and-pregnancy",
+        title: "PCOS & Pregnancy",
+        desc: "Getting pregnant with PCOS, fertility treatments, pregnancy risks, and what to expect every step of the way.",
+        emoji: "🤰",
+        badge: null,
+      },
+    ],
+  },
+];
+
+export default function GuidesPage() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-purple-50">
+      {/* Hero */}
+      <div className="bg-gradient-to-r from-pink-600 to-purple-600 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+          <span className="inline-block bg-white/20 text-xs font-semibold px-3 py-1 rounded-full mb-4 uppercase tracking-wide">
+            HerPCOS Library
+          </span>
+          <h1 className="text-4xl sm:text-5xl font-bold mb-4">PCOS Guides</h1>
+          <p className="text-xl text-pink-100 max-w-2xl mx-auto leading-relaxed">
+            Evidence-based guides written in plain language — covering every aspect
+            of PCOS from diagnosis to daily management.
+          </p>
+          <p className="text-pink-200 text-sm mt-4">
+            {GUIDES.reduce((n, g) => n + g.items.length, 0)} guides · Updated June 2025
+          </p>
+        </div>
+      </div>
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+        {GUIDES.map((group) => (
+          <section key={group.category}>
+            <h2 className="text-lg font-bold text-gray-500 uppercase tracking-wider mb-4">
+              {group.category}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {group.items.map((guide) => (
+                <Link
+                  key={guide.href}
+                  href={guide.href}
+                  className="group bg-white rounded-2xl border border-pink-100 shadow-sm p-6 hover:shadow-md hover:border-pink-200 transition-all"
+                >
+                  <div className="flex items-start justify-between gap-3 mb-3">
+                    <span className="text-3xl">{guide.emoji}</span>
+                    {guide.badge && (
+                      <span className="text-xs font-semibold bg-pink-100 text-pink-700 px-2.5 py-1 rounded-full shrink-0">
+                        {guide.badge}
+                      </span>
+                    )}
+                  </div>
+                  <h3 className="font-bold text-gray-900 mb-2 group-hover:text-pink-600 transition-colors">
+                    {guide.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">{guide.desc}</p>
+                  <p className="text-xs text-pink-500 font-medium mt-3">Read guide →</p>
+                </Link>
+              ))}
+            </div>
+          </section>
+        ))}
+
+        {/* Chatbot CTA */}
+        <section className="bg-gradient-to-r from-pink-600 to-purple-600 rounded-2xl p-8 text-center text-white">
+          <h2 className="text-2xl font-bold mb-3">Can&apos;t Find What You&apos;re Looking For?</h2>
+          <p className="text-pink-100 mb-6 max-w-lg mx-auto">
+            Ask our AI assistant any PCOS question — symptoms, treatments, diet,
+            medications, or anything else on your mind.
+          </p>
+          <Link
+            href="/chat"
+            className="inline-block bg-white text-pink-600 font-bold px-8 py-3 rounded-full hover:bg-pink-50 transition-colors"
+          >
+            Ask the AI Chat Assistant →
+          </Link>
+        </section>
+
+        <NewsletterSignup />
+      </div>
+    </div>
+  );
+}

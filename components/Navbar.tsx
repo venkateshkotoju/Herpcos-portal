@@ -86,6 +86,15 @@ export default function Navbar() {
                       {g.label}
                     </Link>
                   ))}
+                  <div className="border-t border-pink-100 mt-2 pt-2">
+                    <Link
+                      href="/guides"
+                      onClick={() => setGuidesOpen(false)}
+                      className="flex items-center justify-center gap-1 px-4 py-2.5 text-sm font-semibold text-pink-600 hover:bg-pink-50 transition-colors"
+                    >
+                      View all guides →
+                    </Link>
+                  </div>
                 </div>
               )}
             </div>
@@ -156,6 +165,13 @@ export default function Navbar() {
                       {g.label}
                     </Link>
                   ))}
+                  <Link
+                    href="/guides"
+                    className="text-pink-600 font-semibold px-2 py-1.5 rounded-lg hover:bg-pink-50 text-sm"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    View all guides →
+                  </Link>
                 </div>
               )}
 
