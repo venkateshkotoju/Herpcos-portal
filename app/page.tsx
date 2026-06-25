@@ -232,18 +232,53 @@ export default function HomePage() {
               color: "border-pink-100",
             },
             {
-              href: "/pcos-irregular-periods",
-              emoji: "📅",
-              title: "PCOS & Irregular Periods",
-              desc: "Why PCOS disrupts your cycle and the treatment options available.",
-              color: "border-purple-100",
-            },
-            {
               href: "/insulin-resistance-pcos",
               emoji: "💉",
               title: "Insulin Resistance & PCOS",
               desc: "The core link between insulin and PCOS — explained simply, with next steps.",
+              color: "border-purple-100",
+            },
+            {
+              href: "/metformin-for-pcos",
+              emoji: "💊",
+              title: "Metformin for PCOS",
+              desc: "How Metformin targets insulin resistance, restores ovulation, and reduces androgens.",
               color: "border-pink-100",
+            },
+            {
+              href: "/inositol-for-pcos",
+              emoji: "🌿",
+              title: "Inositol for PCOS",
+              desc: "Myo-inositol vs D-chiro-inositol, the 40:1 ratio, and what research shows.",
+              color: "border-purple-100",
+            },
+            {
+              href: "/pcos-irregular-periods",
+              emoji: "📅",
+              title: "PCOS & Irregular Periods",
+              desc: "Why PCOS disrupts your cycle and the treatment options available.",
+              color: "border-pink-100",
+            },
+            {
+              href: "/pcos-hair-loss",
+              emoji: "💇",
+              title: "PCOS Hair Loss",
+              desc: "Why androgens cause scalp thinning and which treatments are backed by evidence.",
+              color: "border-purple-100",
+            },
+            {
+              href: "/pcos-and-pregnancy",
+              emoji: "🤰",
+              title: "PCOS & Pregnancy",
+              desc: "Getting pregnant with PCOS, fertility treatments, and pregnancy risks explained.",
+              color: "border-pink-100",
+            },
+            {
+              href: "/pcos-lab-results",
+              emoji: "🧪",
+              title: "PCOS Lab Results",
+              desc: "What every blood test means — testosterone, LH/FSH, AMH, insulin, and more.",
+              color: "border-purple-100",
             },
           ].map((guide) => (
             <Link
@@ -261,6 +296,14 @@ export default function HomePage() {
               </span>
             </Link>
           ))}
+        </div>
+        <div className="text-center mt-8">
+          <Link
+            href="/guides"
+            className="inline-block bg-white border-2 border-pink-200 text-pink-600 font-semibold px-8 py-3 rounded-full hover:border-pink-400 hover:bg-pink-50 transition-colors"
+          >
+            Browse all guides →
+          </Link>
         </div>
       </section>
 
