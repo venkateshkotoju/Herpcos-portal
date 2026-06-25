@@ -76,6 +76,11 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-3">PCOS Guides</h3>
             <ul className="space-y-2 text-sm">
               <li>
+                <Link href="/what-is-pcos" className="hover:text-pink-400 transition-colors">
+                  What Is PCOS?
+                </Link>
+              </li>
+              <li>
                 <Link href="/pcos-symptoms" className="hover:text-pink-400 transition-colors">
                   PCOS Symptoms
                 </Link>

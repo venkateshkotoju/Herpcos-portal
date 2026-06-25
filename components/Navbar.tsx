@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 
 const GUIDES = [
+  { href: "/what-is-pcos", label: "What Is PCOS?", emoji: "💡" },
   { href: "/pcos-symptoms", label: "PCOS Symptoms", emoji: "🔍" },
   { href: "/pcos-diet", label: "Best Diet for PCOS", emoji: "🥗" },
   { href: "/pcos-weight-loss", label: "Weight Loss Guide", emoji: "⚖️" },

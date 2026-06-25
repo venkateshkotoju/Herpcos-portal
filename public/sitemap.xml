@@ -18,6 +18,12 @@
 
   <!-- PCOS Guides — primary SEO pages, highest priority after homepage -->
   <url>
+    <loc>https://herpcos.com/what-is-pcos</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <lastmod>2025-06-25</lastmod>
+  </url>
+  <url>
     <loc>https://herpcos.com/pcos-symptoms</loc>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>

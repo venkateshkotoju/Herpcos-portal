@@ -20,11 +20,18 @@ const GUIDES = [
     category: "Understanding PCOS",
     items: [
       {
+        href: "/what-is-pcos",
+        title: "What Is PCOS?",
+        desc: "The complete beginner's guide — what PCOS is, what causes it, the 4 types, how it's diagnosed, and how it's treated.",
+        emoji: "💡",
+        badge: "Start here",
+      },
+      {
         href: "/pcos-symptoms",
         title: "PCOS Symptoms",
         desc: "The complete guide to every PCOS symptom — from irregular periods and acne to mood changes and fatigue.",
         emoji: "🔍",
-        badge: "Start here",
+        badge: null,
       },
       {
         href: "/pcos-lab-results",
