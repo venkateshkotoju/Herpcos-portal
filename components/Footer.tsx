@@ -100,6 +100,31 @@ export default function Footer() {
                   Insulin Resistance
                 </Link>
               </li>
+              <li>
+                <Link href="/metformin-for-pcos" className="hover:text-pink-400 transition-colors">
+                  Metformin for PCOS
+                </Link>
+              </li>
+              <li>
+                <Link href="/inositol-for-pcos" className="hover:text-pink-400 transition-colors">
+                  Inositol for PCOS
+                </Link>
+              </li>
+              <li>
+                <Link href="/pcos-hair-loss" className="hover:text-pink-400 transition-colors">
+                  PCOS Hair Loss
+                </Link>
+              </li>
+              <li>
+                <Link href="/pcos-and-pregnancy" className="hover:text-pink-400 transition-colors">
+                  PCOS &amp; Pregnancy
+                </Link>
+              </li>
+              <li>
+                <Link href="/pcos-lab-results" className="hover:text-pink-400 transition-colors">
+                  PCOS Lab Results
+                </Link>
+              </li>
             </ul>
           </div>
 
