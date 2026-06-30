@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import AuthorCard from "@/components/AuthorCard";
+import GuideSchema from "@/components/GuideSchema";
 
 export const metadata: Metadata = {
   title: "Understanding PCOS Lab Results: Complete Blood Test Guide | HerPCOS",
@@ -240,6 +241,13 @@ export default function PcosLabResultsPage() {
         </div>
       </div>
 
+      <GuideSchema
+        title="Understanding PCOS Lab Results: Complete Blood Test Guide"
+        description="Understand your PCOS blood test results — testosterone, LH/FSH, AMH, insulin, glucose, thyroid, and more. Learn what each test means and what ranges to aim for."
+        url="https://herpcos.com/pcos-lab-results"
+        datePublished="2025-06-25"
+        breadcrumbLabel="PCOS Lab Results"
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
         <AuthorCard lastUpdated="June 25, 2025" />
       </div>

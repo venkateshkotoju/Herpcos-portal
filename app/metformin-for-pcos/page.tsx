@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import AuthorCard from "@/components/AuthorCard";
+import GuideSchema from "@/components/GuideSchema";
 
 export const metadata: Metadata = {
   title: "Metformin for PCOS: Benefits, Side Effects & What to Expect | HerPCOS",
@@ -163,6 +164,13 @@ export default function MetforminForPcosPage() {
         </div>
       </div>
 
+      <GuideSchema
+        title="Metformin for PCOS: Benefits, Side Effects & What to Expect"
+        description="Learn how Metformin works for PCOS, its benefits for insulin resistance and periods, common side effects, dosage, and what questions to ask your doctor."
+        url="https://herpcos.com/metformin-for-pcos"
+        datePublished="2025-06-25"
+        breadcrumbLabel="Metformin for PCOS"
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
         <AuthorCard lastUpdated="June 25, 2025" />
       </div>

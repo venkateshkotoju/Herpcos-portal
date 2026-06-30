@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import AuthorCard from "@/components/AuthorCard";
+import GuideSchema from "@/components/GuideSchema";
 
 export const metadata: Metadata = {
   title: "PCOS and Pregnancy: Getting Pregnant, Risks & What to Expect | HerPCOS",
@@ -213,6 +214,13 @@ export default function PcosAndPregnancyPage() {
         </div>
       </div>
 
+      <GuideSchema
+        title="PCOS and Pregnancy: Getting Pregnant, Risks & What to Expect"
+        description="A complete guide to PCOS and pregnancy — how PCOS affects fertility, how to improve your chances of conceiving, risks during pregnancy, and how to manage PCOS while pregnant."
+        url="https://herpcos.com/pcos-and-pregnancy"
+        datePublished="2025-06-25"
+        breadcrumbLabel="PCOS & Pregnancy"
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
         <AuthorCard lastUpdated="June 25, 2025" />
       </div>

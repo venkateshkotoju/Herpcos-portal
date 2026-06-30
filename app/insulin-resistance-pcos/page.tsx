@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import AuthorCard from "@/components/AuthorCard";
+import GuideSchema from "@/components/GuideSchema";
 
 export const metadata: Metadata = {
   title: "Insulin Resistance and PCOS: The Connection Explained | HerPCOS Portal",
@@ -157,6 +158,13 @@ export default function InsulinResistancePcosPage() {
         </div>
       </div>
 
+      <GuideSchema
+        title="Insulin Resistance and PCOS: The Connection Explained"
+        description="Learn what insulin resistance is, why it's linked to PCOS, how to test for it, and natural and medical ways to manage it. Beginner-friendly guide."
+        url="https://herpcos.com/insulin-resistance-pcos"
+        datePublished="2025-06-24"
+        breadcrumbLabel="Insulin Resistance"
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
         <AuthorCard lastUpdated="June 24, 2025" />
       </div>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import AuthorCard from "@/components/AuthorCard";
+import GuideSchema from "@/components/GuideSchema";
 
 export const metadata: Metadata = {
   title: "What Is PCOS? Causes, Symptoms, Diagnosis & Treatment | HerPCOS",
@@ -222,6 +223,13 @@ export default function WhatIsPcosPage() {
         </div>
       </div>
 
+      <GuideSchema
+        title="What Is PCOS? Causes, Symptoms, Diagnosis & Treatment"
+        description="PCOS (Polycystic Ovary Syndrome) is a hormonal condition affecting 1 in 10 women. Learn what it is, what causes it, how it's diagnosed, and how to manage it — explained simply."
+        url="https://herpcos.com/what-is-pcos"
+        datePublished="2025-06-25"
+        breadcrumbLabel="What Is PCOS?"
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
         <AuthorCard lastUpdated="June 25, 2025" />
       </div>

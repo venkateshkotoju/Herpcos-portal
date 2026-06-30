@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import AuthorCard from "@/components/AuthorCard";
+import GuideSchema from "@/components/GuideSchema";
 
 export const metadata: Metadata = {
   title: "PCOS Symptoms: Complete Guide for 2025 | HerPCOS Portal",
@@ -160,6 +161,13 @@ export default function PcosSymptomsPage() {
         </div>
       </div>
 
+      <GuideSchema
+        title="PCOS Symptoms: Complete Guide for 2025"
+        description="Learn about all PCOS symptoms — from irregular periods and hair loss to acne and mood changes. Beginner-friendly guide with FAQs and expert tips."
+        url="https://herpcos.com/pcos-symptoms"
+        datePublished="2025-06-24"
+        breadcrumbLabel="PCOS Symptoms"
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
         <AuthorCard lastUpdated="June 24, 2025" />
       </div>

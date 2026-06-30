@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import AuthorCard from "@/components/AuthorCard";
+import GuideSchema from "@/components/GuideSchema";
 
 export const metadata: Metadata = {
   title: "Best Diet for PCOS: What to Eat & Avoid in 2025 | HerPCOS Portal",
@@ -145,6 +146,13 @@ export default function PcosDietPage() {
         </div>
       </div>
 
+      <GuideSchema
+        title="Best Diet for PCOS: What to Eat & Avoid in 2025"
+        description="Discover the best PCOS diet — what foods help, what to avoid, meal ideas, and how diet affects hormones and insulin resistance. Beginner-friendly guide."
+        url="https://herpcos.com/pcos-diet"
+        datePublished="2025-06-24"
+        breadcrumbLabel="Best Diet for PCOS"
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
         <AuthorCard lastUpdated="June 24, 2025" />
       </div>

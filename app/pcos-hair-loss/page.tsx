@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import AuthorCard from "@/components/AuthorCard";
+import GuideSchema from "@/components/GuideSchema";
 
 export const metadata: Metadata = {
   title: "PCOS Hair Loss: Why It Happens & What Actually Helps | HerPCOS",
@@ -200,6 +201,13 @@ export default function PcosHairLossPage() {
         </div>
       </div>
 
+      <GuideSchema
+        title="PCOS Hair Loss: Why It Happens & What Actually Helps"
+        description="PCOS causes hair loss through elevated androgens and DHT. Learn why it happens, which treatments work (minoxidil, spironolactone, supplements), and what to expect."
+        url="https://herpcos.com/pcos-hair-loss"
+        datePublished="2025-06-25"
+        breadcrumbLabel="PCOS Hair Loss"
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
         <AuthorCard lastUpdated="June 25, 2025" />
       </div>

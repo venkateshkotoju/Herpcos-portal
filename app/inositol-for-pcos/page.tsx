@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import AuthorCard from "@/components/AuthorCard";
+import GuideSchema from "@/components/GuideSchema";
 
 export const metadata: Metadata = {
   title: "Inositol for PCOS: Myo-Inositol vs D-Chiro, Benefits & Dosage | HerPCOS",
@@ -188,6 +189,13 @@ export default function InositolForPcosPage() {
         </div>
       </div>
 
+      <GuideSchema
+        title="Inositol for PCOS: Myo-Inositol vs D-Chiro, Benefits & Dosage"
+        description="Everything you need to know about inositol for PCOS — how myo-inositol and D-chiro-inositol work, the research-backed 40:1 ratio, dosage, and what to expect."
+        url="https://herpcos.com/inositol-for-pcos"
+        datePublished="2025-06-25"
+        breadcrumbLabel="Inositol for PCOS"
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
         <AuthorCard lastUpdated="June 25, 2025" />
       </div>

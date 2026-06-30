@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import AuthorCard from "@/components/AuthorCard";
+import GuideSchema from "@/components/GuideSchema";
 
 export const metadata: Metadata = {
   title: "PCOS and Irregular Periods: Causes & What to Do | HerPCOS Portal",
@@ -143,6 +144,13 @@ export default function PcosIrregularPeriodsPage() {
         </div>
       </div>
 
+      <GuideSchema
+        title="PCOS and Irregular Periods: Causes & What to Do"
+        description="Learn why PCOS causes irregular, missed, or heavy periods, how to track your cycle, and what treatment options exist. Clear, beginner-friendly guide."
+        url="https://herpcos.com/pcos-irregular-periods"
+        datePublished="2025-06-24"
+        breadcrumbLabel="Irregular Periods"
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
         <AuthorCard lastUpdated="June 24, 2025" />
       </div>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import AuthorCard from "@/components/AuthorCard";
+import GuideSchema from "@/components/GuideSchema";
 
 export const metadata: Metadata = {
   title: "PCOS Weight Loss Guide: What Actually Works | HerPCOS Portal",
@@ -150,6 +151,13 @@ export default function PcosWeightLossPage() {
         </div>
       </div>
 
+      <GuideSchema
+        title="PCOS Weight Loss Guide: What Actually Works"
+        description="Struggling to lose weight with PCOS? Learn why it's harder, what actually helps, and evidence-based strategies for lasting results. Beginner-friendly."
+        url="https://herpcos.com/pcos-weight-loss"
+        datePublished="2025-06-24"
+        breadcrumbLabel="PCOS Weight Loss"
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
         <AuthorCard lastUpdated="June 24, 2025" />
       </div>
