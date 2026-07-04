@@ -5,15 +5,23 @@ import AuthorCard from "@/components/AuthorCard";
 import GuideSchema from "@/components/GuideSchema";
 
 export const metadata: Metadata = {
-  title: "What Is PCOS? Causes, Symptoms, Diagnosis & Treatment | HerPCOS",
+  title: "What Is PCOS? Causes, Symptoms, Diagnosis & Treatment",
   description:
-    "PCOS (Polycystic Ovary Syndrome) is a hormonal condition affecting 1 in 10 women. Learn what it is, what causes it, how it's diagnosed, and how to manage it — explained simply.",
+    "PCOS (Polycystic Ovary Syndrome) is a hormonal condition affecting 1 in 10 women. Learn what it is, what causes it, and how it's diagnosed and managed.",
   openGraph: {
     title: "What Is PCOS? Causes, Symptoms, Diagnosis & Treatment",
     description:
       "PCOS (Polycystic Ovary Syndrome) is a hormonal condition affecting 1 in 10 women. Learn what it is, what causes it, how it's diagnosed, and how to manage it.",
     url: "https://herpcos.com/what-is-pcos",
     type: "article",
+    images: [
+      {
+        url: "https://herpcos.com/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "What Is PCOS? — HerPCOS Portal",
+      },
+    ],
   },
 };
 

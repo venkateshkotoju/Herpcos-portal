@@ -5,7 +5,7 @@ import AuthorCard from "@/components/AuthorCard";
 import GuideSchema from "@/components/GuideSchema";
 
 export const metadata: Metadata = {
-  title: "PCOS Symptoms: Complete Guide for 2025 | HerPCOS Portal",
+  title: "PCOS Symptoms: Complete Guide for 2025",
   description:
     "Learn about all PCOS symptoms — from irregular periods and hair loss to acne and mood changes. Beginner-friendly guide with FAQs and expert tips.",
   openGraph: {
@@ -14,6 +14,14 @@ export const metadata: Metadata = {
       "Learn about all PCOS symptoms — from irregular periods and hair loss to acne and mood changes. Beginner-friendly guide with FAQs.",
     url: "https://herpcos.com/pcos-symptoms",
     type: "article",
+    images: [
+      {
+        url: "https://herpcos.com/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "PCOS Symptoms — HerPCOS Portal",
+      },
+    ],
   },
 };
 

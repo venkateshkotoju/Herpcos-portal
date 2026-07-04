@@ -5,15 +5,23 @@ import AuthorCard from "@/components/AuthorCard";
 import GuideSchema from "@/components/GuideSchema";
 
 export const metadata: Metadata = {
-  title: "Understanding PCOS Lab Results: Complete Blood Test Guide | HerPCOS",
+  title: "Understanding PCOS Lab Results: Complete Blood Test Guide",
   description:
-    "Understand your PCOS blood test results — testosterone, LH/FSH, AMH, insulin, glucose, thyroid, and more. Learn what each test means and what ranges to aim for.",
+    "Understand your PCOS blood test results — testosterone, LH/FSH, AMH, insulin, glucose, thyroid, and more. Learn what each test means.",
   openGraph: {
     title: "Understanding PCOS Lab Results: Complete Blood Test Guide",
     description:
       "Understand your PCOS blood test results — testosterone, LH/FSH, AMH, insulin, glucose, thyroid, and more. Learn what each test means and what ranges to aim for.",
     url: "https://herpcos.com/pcos-lab-results",
     type: "article",
+    images: [
+      {
+        url: "https://herpcos.com/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Understanding PCOS Lab Results — HerPCOS Portal",
+      },
+    ],
   },
 };
 

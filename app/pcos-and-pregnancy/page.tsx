@@ -5,15 +5,23 @@ import AuthorCard from "@/components/AuthorCard";
 import GuideSchema from "@/components/GuideSchema";
 
 export const metadata: Metadata = {
-  title: "PCOS and Pregnancy: Getting Pregnant, Risks & What to Expect | HerPCOS",
+  title: "PCOS and Pregnancy: Getting Pregnant, Risks & What to Expect",
   description:
-    "A complete guide to PCOS and pregnancy — how PCOS affects fertility, how to improve your chances of conceiving, risks during pregnancy, and how to manage PCOS while pregnant.",
+    "A complete guide to PCOS and pregnancy — how it affects fertility, how to improve your chances of conceiving, and risks to know about.",
   openGraph: {
     title: "PCOS and Pregnancy: Getting Pregnant, Risks & What to Expect",
     description:
       "A complete guide to PCOS and pregnancy — how PCOS affects fertility, how to improve your chances of conceiving, risks during pregnancy, and how to manage PCOS while pregnant.",
     url: "https://herpcos.com/pcos-and-pregnancy",
     type: "article",
+    images: [
+      {
+        url: "https://herpcos.com/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "PCOS and Pregnancy — HerPCOS Portal",
+      },
+    ],
   },
 };
 

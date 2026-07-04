@@ -5,7 +5,7 @@ import AuthorCard from "@/components/AuthorCard";
 import GuideSchema from "@/components/GuideSchema";
 
 export const metadata: Metadata = {
-  title: "Insulin Resistance and PCOS: The Connection Explained | HerPCOS Portal",
+  title: "Insulin Resistance and PCOS: The Connection Explained",
   description:
     "Learn what insulin resistance is, why it's linked to PCOS, how to test for it, and natural and medical ways to manage it. Beginner-friendly guide.",
   openGraph: {
@@ -14,6 +14,14 @@ export const metadata: Metadata = {
       "Learn what insulin resistance is, why it's linked to PCOS, how to test for it, and natural ways to manage it.",
     url: "https://herpcos.com/insulin-resistance-pcos",
     type: "article",
+    images: [
+      {
+        url: "https://herpcos.com/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Insulin Resistance and PCOS — HerPCOS Portal",
+      },
+    ],
   },
 };
 
