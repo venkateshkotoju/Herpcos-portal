@@ -42,14 +42,15 @@ export default function ChatPage() {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  const handleSend = async () => {
-    if (!input.trim() || isStreaming) return;
+  const handleSend = async (overrideText?: string) => {
+    const text = (overrideText ?? input).trim();
+    if (!text || isStreaming) return;
 
     setError(null);
     const userMessage: Message = {
       id: Date.now().toString(),
       role: "user",
-      content: input.trim(),
+      content: text,
       timestamp: new Date(),
     };
 
@@ -142,6 +143,25 @@ export default function ChatPage() {
           </div>
         )}
 
+        {/* Suggested Questions */}
+        <div className="mt-6">
+          <p className="text-sm font-medium text-gray-500 mb-3">
+            Try asking:
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {SUGGESTED_QUESTIONS.map((q) => (
+              <button
+                key={q}
+                onClick={() => handleSend(q)}
+                disabled={isStreaming}
+                className="bg-white border border-pink-200 text-pink-700 px-3 py-1.5 rounded-full text-sm hover:bg-pink-50 transition-colors disabled:opacity-50"
+              >
+                {q}
+              </button>
+            ))}
+          </div>
+        </div>
+
         {/* Chat Window */}
         <div className="mt-6 bg-white rounded-2xl shadow-sm border border-pink-100 flex flex-col h-[550px]">
           {/* Messages */}
@@ -190,7 +210,7 @@ export default function ChatPage() {
                 disabled={isStreaming}
               />
               <button
-                onClick={handleSend}
+                onClick={() => handleSend()}
                 disabled={!input.trim() || isStreaming}
                 className="bg-pink-600 text-white p-3 rounded-xl hover:bg-pink-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 aria-label="Send message"
@@ -203,25 +223,6 @@ export default function ChatPage() {
             <p className="text-xs text-gray-400 mt-2 text-center">
               Press Enter to send · Shift+Enter for new line
             </p>
-          </div>
-        </div>
-
-        {/* Suggested Questions */}
-        <div className="mt-6">
-          <p className="text-sm font-medium text-gray-500 mb-3">
-            Try asking:
-          </p>
-          <div className="flex flex-wrap gap-2">
-            {SUGGESTED_QUESTIONS.map((q) => (
-              <button
-                key={q}
-                onClick={() => setInput(q)}
-                disabled={isStreaming}
-                className="bg-white border border-pink-200 text-pink-700 px-3 py-1.5 rounded-full text-sm hover:bg-pink-50 transition-colors disabled:opacity-50"
-              >
-                {q}
-              </button>
-            ))}
           </div>
         </div>
       </div>
