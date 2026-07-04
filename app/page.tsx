@@ -6,13 +6,23 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "HerPCOS Portal — AI-Powered PCOS Support & Information",
   description:
-    "HerPCOS helps women with PCOS understand their symptoms, diet, hormones, and treatment options. Free AI-powered guidance, expert guides, and community Q&A — available 24/7.",
+    "HerPCOS helps women understand PCOS symptoms, diet, and hormones with free AI-powered guidance, expert guides, and community Q&A — available 24/7.",
   openGraph: {
     title: "HerPCOS Portal — AI-Powered PCOS Support",
     description:
       "Free AI-powered PCOS guidance, expert guides on symptoms, diet, weight loss, and hormones — available 24/7.",
     url: "https://herpcos.com",
     type: "website",
+    siteName: "HerPCOS Portal",
+    locale: "en_US",
+    images: [
+      {
+        url: "https://herpcos.com/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "HerPCOS Portal — AI-Powered PCOS Support",
+      },
+    ],
   },
 };
 

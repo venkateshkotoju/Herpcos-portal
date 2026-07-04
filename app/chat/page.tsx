@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect } from "react";
 import Disclaimer from "@/components/Disclaimer";
-import type { Metadata } from "next";
 
 interface Message {
   id: string;

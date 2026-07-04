@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    "HerPCOS helps women with PCOS understand their symptoms, diet, hormones, and treatment options. Free AI-powered guidance, expert guides, and community Q&A — available 24/7.",
+    "HerPCOS helps women understand PCOS symptoms, diet, and hormones with free AI-powered guidance, expert guides, and community Q&A — available 24/7.",
   keywords: [
     "PCOS",
     "polycystic ovary syndrome",

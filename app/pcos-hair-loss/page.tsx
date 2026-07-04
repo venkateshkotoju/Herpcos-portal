@@ -5,15 +5,25 @@ import AuthorCard from "@/components/AuthorCard";
 import GuideSchema from "@/components/GuideSchema";
 
 export const metadata: Metadata = {
-  title: "PCOS Hair Loss: Why It Happens & What Actually Helps | HerPCOS",
+  title: "PCOS Hair Loss: Why It Happens & What Actually Helps",
   description:
-    "PCOS causes hair loss through elevated androgens and DHT. Learn why it happens, which treatments work (minoxidil, spironolactone, supplements), and what to expect.",
+    "PCOS causes hair loss through elevated androgens and DHT. Learn why it happens, which treatments work, and what to expect.",
   openGraph: {
     title: "PCOS Hair Loss: Why It Happens & What Actually Helps",
     description:
       "PCOS causes hair loss through elevated androgens and DHT. Learn why it happens, which treatments work (minoxidil, spironolactone, supplements), and what to expect.",
     url: "https://herpcos.com/pcos-hair-loss",
     type: "article",
+    siteName: "HerPCOS Portal",
+    locale: "en_US",
+    images: [
+      {
+        url: "https://herpcos.com/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "PCOS Hair Loss — HerPCOS Portal",
+      },
+    ],
   },
 };
 

@@ -5,7 +5,7 @@ import AuthorCard from "@/components/AuthorCard";
 import GuideSchema from "@/components/GuideSchema";
 
 export const metadata: Metadata = {
-  title: "Best Diet for PCOS: What to Eat & Avoid in 2025 | HerPCOS Portal",
+  title: "Best Diet for PCOS: What to Eat & Avoid in 2025",
   description:
     "Discover the best PCOS diet — what foods help, what to avoid, meal ideas, and how diet affects hormones and insulin resistance. Beginner-friendly guide.",
   openGraph: {
@@ -14,6 +14,16 @@ export const metadata: Metadata = {
       "Discover the best PCOS diet — what foods help, what to avoid, meal ideas, and how diet affects hormones and insulin resistance.",
     url: "https://herpcos.com/pcos-diet",
     type: "article",
+    siteName: "HerPCOS Portal",
+    locale: "en_US",
+    images: [
+      {
+        url: "https://herpcos.com/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Best Diet for PCOS — HerPCOS Portal",
+      },
+    ],
   },
 };
 

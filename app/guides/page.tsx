@@ -3,15 +3,25 @@ import Link from "next/link";
 import NewsletterSignup from "@/components/NewsletterSignup";
 
 export const metadata: Metadata = {
-  title: "PCOS Guides: Evidence-Based Information for Every Symptom | HerPCOS",
+  title: "PCOS Guides: Evidence-Based Information for Every Symptom",
   description:
-    "Free, evidence-based PCOS guides covering symptoms, diet, weight loss, hormones, medications, hair loss, fertility, lab results, and more. Written for real women.",
+    "Free, evidence-based PCOS guides covering symptoms, diet, weight loss, hormones, medications, hair loss, fertility, and lab results — written for real women.",
   openGraph: {
     title: "PCOS Guides: Evidence-Based Information for Every Symptom",
     description:
       "Free, evidence-based PCOS guides covering symptoms, diet, weight loss, hormones, medications, hair loss, fertility, lab results, and more.",
     url: "https://herpcos.com/guides",
     type: "website",
+    siteName: "HerPCOS Portal",
+    locale: "en_US",
+    images: [
+      {
+        url: "https://herpcos.com/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "PCOS Guides — HerPCOS Portal",
+      },
+    ],
   },
 };
 
