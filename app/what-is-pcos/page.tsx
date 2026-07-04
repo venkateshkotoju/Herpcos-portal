@@ -14,6 +14,8 @@ export const metadata: Metadata = {
       "PCOS (Polycystic Ovary Syndrome) is a hormonal condition affecting 1 in 10 women. Learn what it is, what causes it, how it's diagnosed, and how to manage it.",
     url: "https://herpcos.com/what-is-pcos",
     type: "article",
+    siteName: "HerPCOS Portal",
+    locale: "en_US",
     images: [
       {
         url: "https://herpcos.com/opengraph-image",

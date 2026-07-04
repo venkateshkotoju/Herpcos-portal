@@ -14,6 +14,8 @@ export const metadata: Metadata = {
       "Learn what insulin resistance is, why it's linked to PCOS, how to test for it, and natural ways to manage it.",
     url: "https://herpcos.com/insulin-resistance-pcos",
     type: "article",
+    siteName: "HerPCOS Portal",
+    locale: "en_US",
     images: [
       {
         url: "https://herpcos.com/opengraph-image",

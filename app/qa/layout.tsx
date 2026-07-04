@@ -5,11 +5,13 @@ export const metadata: Metadata = {
   description:
     "Browse real questions about PCOS with expert-reviewed answers, searchable by category across symptoms, diet, and treatment.",
   openGraph: {
-    title: "Community Q&A | HerPCOS Portal",
+    title: "Community Q&A",
     description:
       "Browse real questions about PCOS with expert-reviewed answers, searchable by category across symptoms, diet, and treatment.",
     url: "https://herpcos.com/qa",
     type: "website",
+    siteName: "HerPCOS Portal",
+    locale: "en_US",
     images: [
       {
         url: "https://herpcos.com/opengraph-image",

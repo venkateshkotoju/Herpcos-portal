@@ -14,6 +14,8 @@ export const metadata: Metadata = {
       "Learn how Metformin works for PCOS, its benefits for insulin resistance and periods, common side effects, dosage, and what questions to ask your doctor.",
     url: "https://herpcos.com/metformin-for-pcos",
     type: "article",
+    siteName: "HerPCOS Portal",
+    locale: "en_US",
     images: [
       {
         url: "https://herpcos.com/opengraph-image",

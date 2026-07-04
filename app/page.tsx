@@ -13,6 +13,8 @@ export const metadata: Metadata = {
       "Free AI-powered PCOS guidance, expert guides on symptoms, diet, weight loss, and hormones — available 24/7.",
     url: "https://herpcos.com",
     type: "website",
+    siteName: "HerPCOS Portal",
+    locale: "en_US",
     images: [
       {
         url: "https://herpcos.com/opengraph-image",

@@ -14,6 +14,8 @@ export const metadata: Metadata = {
       "Learn why PCOS causes irregular, missed, or heavy periods, how to track your cycle, and what treatment options exist.",
     url: "https://herpcos.com/pcos-irregular-periods",
     type: "article",
+    siteName: "HerPCOS Portal",
+    locale: "en_US",
     images: [
       {
         url: "https://herpcos.com/opengraph-image",

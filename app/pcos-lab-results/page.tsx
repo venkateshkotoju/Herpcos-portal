@@ -14,6 +14,8 @@ export const metadata: Metadata = {
       "Understand your PCOS blood test results — testosterone, LH/FSH, AMH, insulin, glucose, thyroid, and more. Learn what each test means and what ranges to aim for.",
     url: "https://herpcos.com/pcos-lab-results",
     type: "article",
+    siteName: "HerPCOS Portal",
+    locale: "en_US",
     images: [
       {
         url: "https://herpcos.com/opengraph-image",

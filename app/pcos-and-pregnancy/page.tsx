@@ -14,6 +14,8 @@ export const metadata: Metadata = {
       "A complete guide to PCOS and pregnancy — how PCOS affects fertility, how to improve your chances of conceiving, risks during pregnancy, and how to manage PCOS while pregnant.",
     url: "https://herpcos.com/pcos-and-pregnancy",
     type: "article",
+    siteName: "HerPCOS Portal",
+    locale: "en_US",
     images: [
       {
         url: "https://herpcos.com/opengraph-image",

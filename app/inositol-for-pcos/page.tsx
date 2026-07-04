@@ -14,6 +14,8 @@ export const metadata: Metadata = {
       "Everything you need to know about inositol for PCOS — how myo-inositol and D-chiro-inositol work, the research-backed 40:1 ratio, dosage, and what to expect.",
     url: "https://herpcos.com/inositol-for-pcos",
     type: "article",
+    siteName: "HerPCOS Portal",
+    locale: "en_US",
     images: [
       {
         url: "https://herpcos.com/opengraph-image",

@@ -14,6 +14,8 @@ export const metadata: Metadata = {
       "PCOS causes hair loss through elevated androgens and DHT. Learn why it happens, which treatments work (minoxidil, spironolactone, supplements), and what to expect.",
     url: "https://herpcos.com/pcos-hair-loss",
     type: "article",
+    siteName: "HerPCOS Portal",
+    locale: "en_US",
     images: [
       {
         url: "https://herpcos.com/opengraph-image",

@@ -5,11 +5,13 @@ export const metadata: Metadata = {
   description:
     "Get in touch with the HerPCOS team for questions, feedback, technical support, or partnership opportunities.",
   openGraph: {
-    title: "Contact Us | HerPCOS Portal",
+    title: "Contact Us",
     description:
       "Get in touch with the HerPCOS team for questions, feedback, technical support, or partnership opportunities.",
     url: "https://herpcos.com/contact",
     type: "website",
+    siteName: "HerPCOS Portal",
+    locale: "en_US",
     images: [
       {
         url: "https://herpcos.com/opengraph-image",

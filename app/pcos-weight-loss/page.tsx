@@ -14,6 +14,8 @@ export const metadata: Metadata = {
       "Struggling to lose weight with PCOS? Learn why it's harder and what evidence-based strategies actually work.",
     url: "https://herpcos.com/pcos-weight-loss",
     type: "article",
+    siteName: "HerPCOS Portal",
+    locale: "en_US",
     images: [
       {
         url: "https://herpcos.com/opengraph-image",

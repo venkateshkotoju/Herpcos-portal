@@ -12,6 +12,8 @@ export const metadata: Metadata = {
       "Free, evidence-based PCOS guides covering symptoms, diet, weight loss, hormones, medications, hair loss, fertility, lab results, and more.",
     url: "https://herpcos.com/guides",
     type: "website",
+    siteName: "HerPCOS Portal",
+    locale: "en_US",
     images: [
       {
         url: "https://herpcos.com/opengraph-image",

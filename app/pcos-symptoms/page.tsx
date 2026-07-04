@@ -14,6 +14,8 @@ export const metadata: Metadata = {
       "Learn about all PCOS symptoms — from irregular periods and hair loss to acne and mood changes. Beginner-friendly guide with FAQs.",
     url: "https://herpcos.com/pcos-symptoms",
     type: "article",
+    siteName: "HerPCOS Portal",
+    locale: "en_US",
     images: [
       {
         url: "https://herpcos.com/opengraph-image",

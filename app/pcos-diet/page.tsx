@@ -14,6 +14,8 @@ export const metadata: Metadata = {
       "Discover the best PCOS diet — what foods help, what to avoid, meal ideas, and how diet affects hormones and insulin resistance.",
     url: "https://herpcos.com/pcos-diet",
     type: "article",
+    siteName: "HerPCOS Portal",
+    locale: "en_US",
     images: [
       {
         url: "https://herpcos.com/opengraph-image",
