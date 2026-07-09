@@ -22,7 +22,7 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-1 mb-3">
@@ -37,6 +37,33 @@ export default function Footer() {
               Q&amp;A, and hormone health information — designed with care for
               every woman&apos;s journey.
             </p>
+          </div>
+
+          {/* Start Here */}
+          <div>
+            <h3 className="text-white font-semibold mb-3">New to PCOS?</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/what-is-pcos" className="hover:text-pink-400 transition-colors">
+                  What Is PCOS?
+                </Link>
+              </li>
+              <li>
+                <Link href="/pcos-symptoms" className="hover:text-pink-400 transition-colors">
+                  Symptoms
+                </Link>
+              </li>
+              <li>
+                <Link href="/pcos-diet" className="hover:text-pink-400 transition-colors">
+                  Diet
+                </Link>
+              </li>
+              <li>
+                <Link href="/chat" className="hover:text-pink-400 transition-colors">
+                  Ask the AI
+                </Link>
+              </li>
+            </ul>
           </div>
 
           {/* Navigation */}
