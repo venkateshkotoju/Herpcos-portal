@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Disclaimer from "@/components/Disclaimer";
 import NewsletterSignup from "@/components/NewsletterSignup";
+import { TOTAL_GUIDES_COUNT } from "@/lib/guides";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -344,7 +345,7 @@ export default function HomePage() {
             href="/guides"
             className="inline-block bg-white border-2 border-pink-200 text-pink-600 font-semibold px-8 py-3 rounded-full hover:border-pink-400 hover:bg-pink-50 transition-colors"
           >
-            Browse All 11 PCOS Guides →
+            Browse All {TOTAL_GUIDES_COUNT} PCOS Guides →
           </Link>
         </div>
       </section>
