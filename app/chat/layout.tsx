@@ -4,17 +4,20 @@ export const metadata: Metadata = {
   title: "AI Chat Assistant",
   description:
     "Get instant, compassionate AI-powered answers about PCOS symptoms, diet, treatments, and lifestyle — available 24/7.",
+  alternates: {
+    canonical: "/chat",
+  },
   openGraph: {
     title: "AI Chat Assistant",
     description:
       "Get instant, compassionate AI-powered answers about PCOS symptoms, diet, treatments, and lifestyle — available 24/7.",
-    url: "https://herpcos.com/chat",
+    url: "https://www.herpcos.com/chat",
     type: "website",
     siteName: "HerPCOS Portal",
     locale: "en_US",
     images: [
       {
-        url: "https://herpcos.com/opengraph-image",
+        url: "https://www.herpcos.com/opengraph-image",
         width: 1200,
         height: 630,
         alt: "HerPCOS AI Chat Assistant",

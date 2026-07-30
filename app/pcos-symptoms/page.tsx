@@ -8,17 +8,20 @@ export const metadata: Metadata = {
   title: "PCOS Symptoms: Complete Guide for 2025",
   description:
     "Learn about all PCOS symptoms — from irregular periods and hair loss to acne and mood changes. Beginner-friendly guide with FAQs and expert tips.",
+  alternates: {
+    canonical: "/pcos-symptoms",
+  },
   openGraph: {
     title: "PCOS Symptoms: Complete Guide for 2025",
     description:
       "Learn about all PCOS symptoms — from irregular periods and hair loss to acne and mood changes. Beginner-friendly guide with FAQs.",
-    url: "https://herpcos.com/pcos-symptoms",
+    url: "https://www.herpcos.com/pcos-symptoms",
     type: "article",
     siteName: "HerPCOS Portal",
     locale: "en_US",
     images: [
       {
-        url: "https://herpcos.com/opengraph-image",
+        url: "https://www.herpcos.com/opengraph-image",
         width: 1200,
         height: 630,
         alt: "PCOS Symptoms — HerPCOS Portal",
@@ -124,33 +127,12 @@ const faqSchema = {
   })),
 };
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "MedicalWebPage",
-  name: "PCOS Symptoms: The Complete Guide",
-  description:
-    "Everything you need to know about PCOS symptoms — explained simply, backed by science.",
-  url: "https://herpcos.com/pcos-symptoms",
-  datePublished: "2025-06-01",
-  dateModified: "2025-06-24",
-  publisher: {
-    "@type": "Organization",
-    name: "HerPCOS Portal",
-    url: "https://herpcos.com",
-  },
-  medicalAudience: { "@type": "MedicalAudience", audienceType: "Patient" },
-};
-
 export default function PcosSymptomsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-purple-50">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       {/* Hero */}
       <div className="bg-gradient-to-r from-pink-600 to-purple-600 text-white">
@@ -174,7 +156,7 @@ export default function PcosSymptomsPage() {
       <GuideSchema
         title="PCOS Symptoms: Complete Guide for 2025"
         description="Learn about all PCOS symptoms — from irregular periods and hair loss to acne and mood changes. Beginner-friendly guide with FAQs and expert tips."
-        url="https://herpcos.com/pcos-symptoms"
+        url="https://www.herpcos.com/pcos-symptoms"
         datePublished="2025-06-24"
         breadcrumbLabel="PCOS Symptoms"
       />

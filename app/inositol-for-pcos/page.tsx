@@ -8,17 +8,20 @@ export const metadata: Metadata = {
   title: "Inositol for PCOS: Myo-Inositol vs D-Chiro, Benefits & Dosage",
   description:
     "Everything you need to know about inositol for PCOS — how myo-inositol and D-chiro-inositol work, the research-backed 40:1 ratio, dosage, and what to expect.",
+  alternates: {
+    canonical: "/inositol-for-pcos",
+  },
   openGraph: {
     title: "Inositol for PCOS: Myo-Inositol vs D-Chiro, Benefits & Dosage",
     description:
       "Everything you need to know about inositol for PCOS — how myo-inositol and D-chiro-inositol work, the research-backed 40:1 ratio, dosage, and what to expect.",
-    url: "https://herpcos.com/inositol-for-pcos",
+    url: "https://www.herpcos.com/inositol-for-pcos",
     type: "article",
     siteName: "HerPCOS Portal",
     locale: "en_US",
     images: [
       {
-        url: "https://herpcos.com/opengraph-image",
+        url: "https://www.herpcos.com/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Inositol for PCOS — HerPCOS Portal",
@@ -202,7 +205,7 @@ export default function InositolForPcosPage() {
       <GuideSchema
         title="Inositol for PCOS: Myo-Inositol vs D-Chiro, Benefits & Dosage"
         description="Everything you need to know about inositol for PCOS — how myo-inositol and D-chiro-inositol work, the research-backed 40:1 ratio, dosage, and what to expect."
-        url="https://herpcos.com/inositol-for-pcos"
+        url="https://www.herpcos.com/inositol-for-pcos"
         datePublished="2025-06-25"
         breadcrumbLabel="Inositol for PCOS"
       />

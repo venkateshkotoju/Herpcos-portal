@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   description:
     "Read the Terms of Service for HerPCOS Portal, covering your rights and responsibilities when using our AI-powered PCOS support platform.",
   robots: { index: false, follow: true },
+  alternates: {
+    canonical: "/terms-of-service",
+  },
 };
 
 const SECTIONS = [

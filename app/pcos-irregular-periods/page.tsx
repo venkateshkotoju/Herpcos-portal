@@ -8,17 +8,20 @@ export const metadata: Metadata = {
   title: "PCOS and Irregular Periods: Causes & What to Do",
   description:
     "Learn why PCOS causes irregular, missed, or heavy periods, how to track your cycle, and what treatment options exist. Clear, beginner-friendly guide.",
+  alternates: {
+    canonical: "/pcos-irregular-periods",
+  },
   openGraph: {
     title: "PCOS and Irregular Periods: Causes & What to Do",
     description:
       "Learn why PCOS causes irregular, missed, or heavy periods, how to track your cycle, and what treatment options exist.",
-    url: "https://herpcos.com/pcos-irregular-periods",
+    url: "https://www.herpcos.com/pcos-irregular-periods",
     type: "article",
     siteName: "HerPCOS Portal",
     locale: "en_US",
     images: [
       {
-        url: "https://herpcos.com/opengraph-image",
+        url: "https://www.herpcos.com/opengraph-image",
         width: 1200,
         height: 630,
         alt: "PCOS and Irregular Periods — HerPCOS Portal",
@@ -157,7 +160,7 @@ export default function PcosIrregularPeriodsPage() {
       <GuideSchema
         title="PCOS and Irregular Periods: Causes & What to Do"
         description="Learn why PCOS causes irregular, missed, or heavy periods, how to track your cycle, and what treatment options exist. Clear, beginner-friendly guide."
-        url="https://herpcos.com/pcos-irregular-periods"
+        url="https://www.herpcos.com/pcos-irregular-periods"
         datePublished="2025-06-24"
         breadcrumbLabel="Irregular Periods"
       />
