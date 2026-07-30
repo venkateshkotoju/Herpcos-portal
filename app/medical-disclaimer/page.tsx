@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   description:
     "Important medical disclaimer for HerPCOS Portal. Understand the limitations of AI health information and when to seek professional care.",
   robots: { index: false, follow: true },
+  alternates: {
+    canonical: "/medical-disclaimer",
+  },
 };
 
 export default function MedicalDisclaimerPage() {

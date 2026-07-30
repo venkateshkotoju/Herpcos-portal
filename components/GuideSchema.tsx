@@ -13,8 +13,8 @@ export default function GuideSchema({ title, description, url, datePublished, br
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://herpcos.com/" },
-      { "@type": "ListItem", position: 2, name: "Guides", item: "https://herpcos.com/guides" },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.herpcos.com/" },
+      { "@type": "ListItem", position: 2, name: "Guides", item: "https://www.herpcos.com/guides" },
       { "@type": "ListItem", position: 3, name: breadcrumbLabel, item: url },
     ],
   };
@@ -30,12 +30,12 @@ export default function GuideSchema({ title, description, url, datePublished, br
     author: {
       "@type": "Organization",
       name: "HerPCOS Editorial Team",
-      url: "https://herpcos.com/about",
+      url: "https://www.herpcos.com/about",
     },
     publisher: {
       "@type": "Organization",
       name: "HerPCOS Portal",
-      url: "https://herpcos.com",
+      url: "https://www.herpcos.com",
     },
     about: {
       "@type": "MedicalCondition",

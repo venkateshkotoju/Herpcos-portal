@@ -8,17 +8,20 @@ export const metadata: Metadata = {
   title: "What Is PCOS? Causes, Symptoms, Diagnosis & Treatment",
   description:
     "PCOS (Polycystic Ovary Syndrome) is a hormonal condition affecting 1 in 10 women. Learn what it is, what causes it, and how it's diagnosed and managed.",
+  alternates: {
+    canonical: "/what-is-pcos",
+  },
   openGraph: {
     title: "What Is PCOS? Causes, Symptoms, Diagnosis & Treatment",
     description:
       "PCOS (Polycystic Ovary Syndrome) is a hormonal condition affecting 1 in 10 women. Learn what it is, what causes it, how it's diagnosed, and how to manage it.",
-    url: "https://herpcos.com/what-is-pcos",
+    url: "https://www.herpcos.com/what-is-pcos",
     type: "article",
     siteName: "HerPCOS Portal",
     locale: "en_US",
     images: [
       {
-        url: "https://herpcos.com/opengraph-image",
+        url: "https://www.herpcos.com/opengraph-image",
         width: 1200,
         height: 630,
         alt: "What Is PCOS? — HerPCOS Portal",
@@ -236,7 +239,7 @@ export default function WhatIsPcosPage() {
       <GuideSchema
         title="What Is PCOS? Causes, Symptoms, Diagnosis & Treatment"
         description="PCOS (Polycystic Ovary Syndrome) is a hormonal condition affecting 1 in 10 women. Learn what it is, what causes it, how it's diagnosed, and how to manage it — explained simply."
-        url="https://herpcos.com/what-is-pcos"
+        url="https://www.herpcos.com/what-is-pcos"
         datePublished="2025-06-25"
         breadcrumbLabel="What Is PCOS?"
       />

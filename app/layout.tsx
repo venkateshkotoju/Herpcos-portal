@@ -8,7 +8,7 @@ const GA4_MEASUREMENT_ID = "G-Z5N5FLWPP8";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const SITE_URL = "https://herpcos.com";
+const SITE_URL = "https://www.herpcos.com";
 const SITE_NAME = "HerPCOS Portal";
 const OG_IMAGE = `${SITE_URL}/opengraph-image`;
 

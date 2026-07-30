@@ -8,17 +8,20 @@ export const metadata: Metadata = {
   title: "Metformin for PCOS: Benefits, Side Effects & What to Expect",
   description:
     "Learn how Metformin works for PCOS, its benefits for insulin resistance and periods, common side effects, dosage, and what questions to ask your doctor.",
+  alternates: {
+    canonical: "/metformin-for-pcos",
+  },
   openGraph: {
     title: "Metformin for PCOS: Benefits, Side Effects & What to Expect",
     description:
       "Learn how Metformin works for PCOS, its benefits for insulin resistance and periods, common side effects, dosage, and what questions to ask your doctor.",
-    url: "https://herpcos.com/metformin-for-pcos",
+    url: "https://www.herpcos.com/metformin-for-pcos",
     type: "article",
     siteName: "HerPCOS Portal",
     locale: "en_US",
     images: [
       {
-        url: "https://herpcos.com/opengraph-image",
+        url: "https://www.herpcos.com/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Metformin for PCOS — HerPCOS Portal",
@@ -177,7 +180,7 @@ export default function MetforminForPcosPage() {
       <GuideSchema
         title="Metformin for PCOS: Benefits, Side Effects & What to Expect"
         description="Learn how Metformin works for PCOS, its benefits for insulin resistance and periods, common side effects, dosage, and what questions to ask your doctor."
-        url="https://herpcos.com/metformin-for-pcos"
+        url="https://www.herpcos.com/metformin-for-pcos"
         datePublished="2025-06-25"
         breadcrumbLabel="Metformin for PCOS"
       />

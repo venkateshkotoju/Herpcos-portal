@@ -8,17 +8,20 @@ export const metadata: Metadata = {
   title: "Understanding PCOS Lab Results: Complete Blood Test Guide",
   description:
     "Understand your PCOS blood test results — testosterone, LH/FSH, AMH, insulin, glucose, thyroid, and more. Learn what each test means.",
+  alternates: {
+    canonical: "/pcos-lab-results",
+  },
   openGraph: {
     title: "Understanding PCOS Lab Results: Complete Blood Test Guide",
     description:
       "Understand your PCOS blood test results — testosterone, LH/FSH, AMH, insulin, glucose, thyroid, and more. Learn what each test means and what ranges to aim for.",
-    url: "https://herpcos.com/pcos-lab-results",
+    url: "https://www.herpcos.com/pcos-lab-results",
     type: "article",
     siteName: "HerPCOS Portal",
     locale: "en_US",
     images: [
       {
-        url: "https://herpcos.com/opengraph-image",
+        url: "https://www.herpcos.com/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Understanding PCOS Lab Results — HerPCOS Portal",
@@ -254,7 +257,7 @@ export default function PcosLabResultsPage() {
       <GuideSchema
         title="Understanding PCOS Lab Results: Complete Blood Test Guide"
         description="Understand your PCOS blood test results — testosterone, LH/FSH, AMH, insulin, glucose, thyroid, and more. Learn what each test means and what ranges to aim for."
-        url="https://herpcos.com/pcos-lab-results"
+        url="https://www.herpcos.com/pcos-lab-results"
         datePublished="2025-06-25"
         breadcrumbLabel="PCOS Lab Results"
       />

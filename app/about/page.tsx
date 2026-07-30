@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "About HerPCOS Portal – Our Mission & Story",
   description:
     "Learn about HerPCOS Portal, our mission to provide AI-powered PCOS education, support, and guidance to women worldwide.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 const STATS = [

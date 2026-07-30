@@ -8,17 +8,20 @@ export const metadata: Metadata = {
   title: "PCOS Weight Loss Guide: What Actually Works",
   description:
     "Struggling to lose weight with PCOS? Learn why it's harder, what actually helps, and evidence-based strategies for lasting results. Beginner-friendly.",
+  alternates: {
+    canonical: "/pcos-weight-loss",
+  },
   openGraph: {
     title: "PCOS Weight Loss Guide: What Actually Works",
     description:
       "Struggling to lose weight with PCOS? Learn why it's harder and what evidence-based strategies actually work.",
-    url: "https://herpcos.com/pcos-weight-loss",
+    url: "https://www.herpcos.com/pcos-weight-loss",
     type: "article",
     siteName: "HerPCOS Portal",
     locale: "en_US",
     images: [
       {
-        url: "https://herpcos.com/opengraph-image",
+        url: "https://www.herpcos.com/opengraph-image",
         width: 1200,
         height: 630,
         alt: "PCOS Weight Loss Guide — HerPCOS Portal",
@@ -164,7 +167,7 @@ export default function PcosWeightLossPage() {
       <GuideSchema
         title="PCOS Weight Loss Guide: What Actually Works"
         description="Struggling to lose weight with PCOS? Learn why it's harder, what actually helps, and evidence-based strategies for lasting results. Beginner-friendly."
-        url="https://herpcos.com/pcos-weight-loss"
+        url="https://www.herpcos.com/pcos-weight-loss"
         datePublished="2025-06-24"
         breadcrumbLabel="PCOS Weight Loss"
       />

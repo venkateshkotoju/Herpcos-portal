@@ -7,17 +7,20 @@ export const metadata: Metadata = {
   title: "PCOS Guides: Evidence-Based Information for Every Symptom",
   description:
     "Free, evidence-based PCOS guides covering symptoms, diet, weight loss, hormones, medications, hair loss, fertility, and lab results — written for real women.",
+  alternates: {
+    canonical: "/guides",
+  },
   openGraph: {
     title: "PCOS Guides: Evidence-Based Information for Every Symptom",
     description:
       "Free, evidence-based PCOS guides covering symptoms, diet, weight loss, hormones, medications, hair loss, fertility, lab results, and more.",
-    url: "https://herpcos.com/guides",
+    url: "https://www.herpcos.com/guides",
     type: "website",
     siteName: "HerPCOS Portal",
     locale: "en_US",
     images: [
       {
-        url: "https://herpcos.com/opengraph-image",
+        url: "https://www.herpcos.com/opengraph-image",
         width: 1200,
         height: 630,
         alt: "PCOS Guides — HerPCOS Portal",
