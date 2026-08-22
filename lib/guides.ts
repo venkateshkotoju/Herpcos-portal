@@ -7,13 +7,19 @@ export interface Guide {
 }
 
 export interface GuideCategory {
+  slug: string;
   category: string;
+  icon: string;
+  blurb: string;
   items: Guide[];
 }
 
 export const GUIDES: GuideCategory[] = [
   {
-    category: "Understanding PCOS",
+    slug: "getting-started",
+    category: "Getting Started",
+    icon: "🌱",
+    blurb: "New to PCOS? Start with the basics.",
     items: [
       {
         href: "/what-is-pcos",
@@ -24,29 +30,25 @@ export const GUIDES: GuideCategory[] = [
       },
       {
         href: "/pcos-symptoms",
-        title: "PCOS Symptoms",
+        title: "PCOS Symptoms Guide",
         desc: "The complete guide to every PCOS symptom — from irregular periods and acne to mood changes and fatigue.",
         emoji: "🔍",
         badge: null,
       },
       {
         href: "/pcos-lab-results",
-        title: "Understanding PCOS Lab Results",
+        title: "PCOS Lab Results",
         desc: "What every blood test means — testosterone, LH/FSH, AMH, insulin, thyroid, and more. Know your numbers.",
         emoji: "🧪",
-        badge: null,
-      },
-      {
-        href: "/insulin-resistance-pcos",
-        title: "Insulin Resistance & PCOS",
-        desc: "Why insulin resistance drives most PCOS symptoms and what you can do to improve it.",
-        emoji: "💉",
         badge: null,
       },
     ],
   },
   {
-    category: "Diet & Lifestyle",
+    slug: "nutrition-weight",
+    category: "Nutrition & Weight",
+    icon: "🥗",
+    blurb: "Food, weight, and the insulin connection.",
     items: [
       {
         href: "/pcos-diet",
@@ -62,10 +64,20 @@ export const GUIDES: GuideCategory[] = [
         emoji: "⚖️",
         badge: null,
       },
+      {
+        href: "/insulin-resistance-pcos",
+        title: "Insulin Resistance & PCOS",
+        desc: "Why insulin resistance drives most PCOS symptoms and what you can do to improve it.",
+        emoji: "💉",
+        badge: null,
+      },
     ],
   },
   {
-    category: "Treatments & Supplements",
+    slug: "treatment-options",
+    category: "Treatment Options",
+    icon: "💊",
+    blurb: "Medications and supplements that can help.",
     items: [
       {
         href: "/metformin-for-pcos",
@@ -84,7 +96,10 @@ export const GUIDES: GuideCategory[] = [
     ],
   },
   {
-    category: "Specific Symptoms",
+    slug: "hormones-symptoms",
+    category: "Hormones & Symptoms",
+    icon: "📅",
+    blurb: "Understand what your body is doing and why.",
     items: [
       {
         href: "/pcos-irregular-periods",
@@ -103,7 +118,10 @@ export const GUIDES: GuideCategory[] = [
     ],
   },
   {
-    category: "Fertility & Pregnancy",
+    slug: "fertility",
+    category: "Fertility",
+    icon: "🤰",
+    blurb: "Trying to conceive or planning a pregnancy with PCOS.",
     items: [
       {
         href: "/pcos-and-pregnancy",
