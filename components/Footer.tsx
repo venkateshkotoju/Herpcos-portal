@@ -1,5 +1,6 @@
 import Link from "next/link";
 import NewsletterSignup from "@/components/NewsletterSignup";
+import { GUIDES } from "@/lib/guides";
 
 export default function Footer() {
   return (
@@ -21,8 +22,34 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* Guides by category */}
+      <div className="border-b border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <h3 className="text-white font-semibold text-lg mb-6">PCOS Guides</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
+            {GUIDES.map((group) => (
+              <div key={group.slug}>
+                <p className="text-gray-200 font-medium text-sm mb-3 flex items-center gap-1.5">
+                  <span>{group.icon}</span>
+                  {group.category}
+                </p>
+                <ul className="space-y-2 text-sm">
+                  {group.items.map((guide) => (
+                    <li key={guide.href}>
+                      <Link href={guide.href} className="hover:text-pink-400 transition-colors">
+                        {guide.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-1 mb-3">
@@ -93,68 +120,6 @@ export default function Footer() {
               <li>
                 <Link href="/contact" className="hover:text-pink-400 transition-colors">
                   Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Guides */}
-          <div>
-            <h3 className="text-white font-semibold mb-3">PCOS Guides</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/what-is-pcos" className="hover:text-pink-400 transition-colors">
-                  What Is PCOS?
-                </Link>
-              </li>
-              <li>
-                <Link href="/pcos-symptoms" className="hover:text-pink-400 transition-colors">
-                  PCOS Symptoms
-                </Link>
-              </li>
-              <li>
-                <Link href="/pcos-diet" className="hover:text-pink-400 transition-colors">
-                  Best Diet for PCOS
-                </Link>
-              </li>
-              <li>
-                <Link href="/pcos-weight-loss" className="hover:text-pink-400 transition-colors">
-                  Weight Loss Guide
-                </Link>
-              </li>
-              <li>
-                <Link href="/pcos-irregular-periods" className="hover:text-pink-400 transition-colors">
-                  Irregular Periods
-                </Link>
-              </li>
-              <li>
-                <Link href="/insulin-resistance-pcos" className="hover:text-pink-400 transition-colors">
-                  Insulin Resistance
-                </Link>
-              </li>
-              <li>
-                <Link href="/metformin-for-pcos" className="hover:text-pink-400 transition-colors">
-                  Metformin for PCOS
-                </Link>
-              </li>
-              <li>
-                <Link href="/inositol-for-pcos" className="hover:text-pink-400 transition-colors">
-                  Inositol for PCOS
-                </Link>
-              </li>
-              <li>
-                <Link href="/pcos-hair-loss" className="hover:text-pink-400 transition-colors">
-                  PCOS Hair Loss
-                </Link>
-              </li>
-              <li>
-                <Link href="/pcos-and-pregnancy" className="hover:text-pink-400 transition-colors">
-                  PCOS &amp; Pregnancy
-                </Link>
-              </li>
-              <li>
-                <Link href="/pcos-lab-results" className="hover:text-pink-400 transition-colors">
-                  PCOS Lab Results
                 </Link>
               </li>
             </ul>

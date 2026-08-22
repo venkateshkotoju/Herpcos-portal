@@ -2,20 +2,7 @@
 
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
-
-const GUIDES = [
-  { href: "/what-is-pcos", label: "What Is PCOS?", emoji: "💡" },
-  { href: "/pcos-symptoms", label: "PCOS Symptoms", emoji: "🔍" },
-  { href: "/pcos-diet", label: "Best Diet for PCOS", emoji: "🥗" },
-  { href: "/pcos-weight-loss", label: "Weight Loss Guide", emoji: "⚖️" },
-  { href: "/pcos-irregular-periods", label: "Irregular Periods", emoji: "📅" },
-  { href: "/insulin-resistance-pcos", label: "Insulin Resistance", emoji: "💉" },
-  { href: "/metformin-for-pcos", label: "Metformin for PCOS", emoji: "💊" },
-  { href: "/inositol-for-pcos", label: "Inositol for PCOS", emoji: "🌿" },
-  { href: "/pcos-hair-loss", label: "PCOS Hair Loss", emoji: "💇" },
-  { href: "/pcos-and-pregnancy", label: "PCOS & Pregnancy", emoji: "🤰" },
-  { href: "/pcos-lab-results", label: "PCOS Lab Results", emoji: "🧪" },
-];
+import { GUIDES } from "@/lib/guides";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -72,28 +59,33 @@ export default function Navbar() {
               </button>
 
               {guidesOpen && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-60 bg-white rounded-2xl shadow-xl border border-pink-100 py-2 z-50">
-                  <p className="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                    PCOS Guides
-                  </p>
-                  {GUIDES.map((g) => (
-                    <Link
-                      key={g.href}
-                      href={g.href}
-                      onClick={() => setGuidesOpen(false)}
-                      className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-700 transition-colors"
-                    >
-                      <span className="text-base">{g.emoji}</span>
-                      {g.label}
-                    </Link>
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[560px] max-w-[90vw] bg-white rounded-2xl shadow-xl border border-pink-100 p-4 z-50 grid grid-cols-2 gap-x-4 gap-y-4">
+                  {GUIDES.map((group) => (
+                    <div key={group.slug}>
+                      <p className="px-2 py-1 text-xs font-semibold text-gray-400 uppercase tracking-wider flex items-center gap-1.5">
+                        <span>{group.icon}</span>
+                        {group.category}
+                      </p>
+                      {group.items.map((g) => (
+                        <Link
+                          key={g.href}
+                          href={g.href}
+                          onClick={() => setGuidesOpen(false)}
+                          className="flex items-center gap-3 px-2 py-1.5 rounded-lg text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-700 transition-colors"
+                        >
+                          <span className="text-base">{g.emoji}</span>
+                          {g.title}
+                        </Link>
+                      ))}
+                    </div>
                   ))}
-                  <div className="border-t border-pink-100 mt-2 pt-2">
+                  <div className="col-span-2 border-t border-pink-100 mt-1 pt-3">
                     <Link
                       href="/guides"
                       onClick={() => setGuidesOpen(false)}
-                      className="flex items-center justify-center gap-1 px-4 py-2.5 text-sm font-semibold text-pink-600 hover:bg-pink-50 transition-colors"
+                      className="flex items-center justify-center gap-1 px-4 py-2.5 text-sm font-semibold text-pink-600 hover:bg-pink-50 rounded-lg transition-colors"
                     >
-                      View all guides →
+                      View All Guides →
                     </Link>
                   </div>
                 </div>
@@ -154,24 +146,32 @@ export default function Navbar() {
                 </svg>
               </button>
               {mobileGuidesOpen && (
-                <div className="pl-4 flex flex-col gap-1">
-                  {GUIDES.map((g) => (
-                    <Link
-                      key={g.href}
-                      href={g.href}
-                      className="flex items-center gap-2 text-gray-600 hover:text-pink-600 px-2 py-1.5 rounded-lg hover:bg-pink-50 text-sm"
-                      onClick={() => setMenuOpen(false)}
-                    >
-                      <span>{g.emoji}</span>
-                      {g.label}
-                    </Link>
+                <div className="pl-4 flex flex-col gap-3">
+                  {GUIDES.map((group) => (
+                    <div key={group.slug}>
+                      <p className="px-2 py-1 text-xs font-semibold text-gray-400 uppercase tracking-wider flex items-center gap-1.5">
+                        <span>{group.icon}</span>
+                        {group.category}
+                      </p>
+                      {group.items.map((g) => (
+                        <Link
+                          key={g.href}
+                          href={g.href}
+                          className="flex items-center gap-2 text-gray-600 hover:text-pink-600 px-2 py-1.5 rounded-lg hover:bg-pink-50 text-sm"
+                          onClick={() => setMenuOpen(false)}
+                        >
+                          <span>{g.emoji}</span>
+                          {g.title}
+                        </Link>
+                      ))}
+                    </div>
                   ))}
                   <Link
                     href="/guides"
                     className="text-pink-600 font-semibold px-2 py-1.5 rounded-lg hover:bg-pink-50 text-sm"
                     onClick={() => setMenuOpen(false)}
                   >
-                    View all guides →
+                    View All Guides →
                   </Link>
                 </div>
               )}
