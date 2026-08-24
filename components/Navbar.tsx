@@ -129,7 +129,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {menuOpen && (
-          <div className="md:hidden pb-4 pt-2 border-t border-pink-100">
+          <div className="md:hidden pb-4 pt-2 border-t border-pink-100 max-h-[calc(100vh-4rem)] overflow-y-auto overscroll-contain">
             <div className="flex flex-col gap-1">
               <Link href="/" className="text-gray-700 hover:text-pink-600 font-medium px-2 py-2 rounded-lg hover:bg-pink-50 text-sm" onClick={() => setMenuOpen(false)}>
                 Home
