@@ -2,6 +2,7 @@ import Link from "next/link";
 import Disclaimer from "@/components/Disclaimer";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import { GUIDES, TOTAL_GUIDES_COUNT } from "@/lib/guides";
+import { TOOLS } from "@/lib/tools";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -268,6 +269,43 @@ export default function HomePage() {
             </Link>
           </div>
 
+        </div>
+      </section>
+
+      {/* Interactive Tools Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold text-gray-900 mb-3">
+            Track Your Symptoms
+          </h2>
+          <p className="text-gray-500 max-w-xl mx-auto">
+            Free, private tools you can use right now — no account required.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
+          {TOOLS.map((tool) => (
+            <Link
+              key={tool.href}
+              href={tool.href}
+              className="group bg-white rounded-2xl p-6 shadow-sm border border-pink-100 hover:shadow-md hover:border-pink-300 transition-all"
+            >
+              <div className="flex items-start justify-between gap-3 mb-3">
+                <span className="text-3xl">{tool.emoji}</span>
+                {tool.badge && (
+                  <span className="text-xs font-semibold bg-pink-100 text-pink-700 px-2.5 py-1 rounded-full shrink-0">
+                    {tool.badge}
+                  </span>
+                )}
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-pink-600 transition-colors">
+                {tool.title}
+              </h3>
+              <p className="text-gray-500 text-sm leading-relaxed">{tool.desc}</p>
+              <span className="inline-block mt-4 text-sm text-pink-600 font-medium">
+                Open tool →
+              </span>
+            </Link>
+          ))}
         </div>
       </section>
 
