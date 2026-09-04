@@ -92,6 +92,9 @@ export default function Navbar() {
               )}
             </div>
 
+            <Link href="/tools" className="text-gray-700 hover:text-pink-600 font-medium transition-colors text-sm">
+              Tools
+            </Link>
             <Link href="/chat" className="text-gray-700 hover:text-pink-600 font-medium transition-colors text-sm">
               AI Chat
             </Link>
@@ -176,6 +179,9 @@ export default function Navbar() {
                 </div>
               )}
 
+              <Link href="/tools" className="text-gray-700 hover:text-pink-600 font-medium px-2 py-2 rounded-lg hover:bg-pink-50 text-sm" onClick={() => setMenuOpen(false)}>
+                Tools
+              </Link>
               <Link href="/chat" className="text-gray-700 hover:text-pink-600 font-medium px-2 py-2 rounded-lg hover:bg-pink-50 text-sm" onClick={() => setMenuOpen(false)}>
                 AI Chat
               </Link>

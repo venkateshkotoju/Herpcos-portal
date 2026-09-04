@@ -103,6 +103,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/tools" className="hover:text-pink-400 transition-colors">
+                  Tools
+                </Link>
+              </li>
+              <li>
                 <Link href="/chat" className="hover:text-pink-400 transition-colors">
                   AI Chat
                 </Link>
